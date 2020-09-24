@@ -1,0 +1,59 @@
+/*=============================================
+main
+=============================================*/
+.main-inner {
+	background: image-url("main-image.jpg") no-repeat center center;
+	background-size: cover;
+	padding-top: 5%;
+	padding-bottom: 10%;
+}
+
+.main-container {
+	padding: 5%;
+	background-color: rgba($color: $color-background-main, $alpha: 0.9);
+	width: 80%;
+	margin: 0 auto;
+
+}
+
+.main-title {
+	font-size: 6rem;
+	font-weight: 700;
+  text-align: center;
+  background-color: $color-background-second;
+  color: $color-text-second;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.main-subtitle {
+font-size: 3.5rem;
+margin-bottom: 20px;
+}
+
+.main-lead {
+margin-bottom: 30px;
+font-size: 2.5rem;
+}
+
+.button-wrapper {
+	text-align: center;
+
+	:hover {
+		cursor: pointer;
+		opacity: $hover-opacity;
+	}
+}
+
+.main-button {
+border-radius: 999px;	
+background-color: $color-active;
+border: none;
+color: $color-text-second;
+padding: 8px 10px;
+font-size: 3rem;
+font-weight: 700;
+width: 350px;
+box-shadow: 0px 3px 5px 0px rgba(62, 62, 62, 0.5);
+
+}

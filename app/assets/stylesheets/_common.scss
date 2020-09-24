@@ -1,0 +1,135 @@
+
+/*=============================================
+基本設定
+=============================================*/
+// 色
+$color-text-main: #3E3E3E; //テキスト基本
+$color-text-second: #F3F3F3; //テキスト白抜き
+$color-background-main: #F3F3F3; //背景色基本
+$color-background-second: #3E3E3E; //白抜き背景
+$color-active: #3366CC; //強調色
+$hover-opacity: 0.7; //透明度
+
+// Googleフォント
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&subset=japanese&display=swap');
+
+// フォント
+$font-family-default: "游ゴシック体", "Yu Gothic", yugothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", meiryo, "MS Pゴシック", "MS PGothic", sans-serif; // 標準フォント
+$font-family-english: 'Montserrat', sans-serif; // 英語フォント
+$font-size-base: 1.6em;
+$font-weight-base: 400;
+$line-height-base: 1.6;
+
+// レイアウト幅
+$layout-width-canvas: 1366px;
+$layout-width-inner: 1024px;
+
+// ブレークポイント
+$breakpoints: (
+	"sp": "screen and (max-width: 375px)",
+	"tab": "screen and (max-width: 768px)",
+	"pc": "screen and (max-width: 900px)",
+);
+
+// メディアクエリ
+@mixin mq($breakpoint: sp) {
+	@media #{map-get($breakpoints, $breakpoint)} {
+		@content;
+	}
+}
+
+/*=============================================
+初期設定
+=============================================*/
+html{
+    font-size: 62.5%;
+}
+
+body {
+	font-family: $font-family-default;
+	font-size: $font-size-base;
+	font-weight: $font-weight-base;
+	color: $color-text-main;
+	line-height: $line-height-base;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background: $color-background-main;
+	overflow-x: hidden;
+	overflow-wrap: break-word;
+}
+
+a{
+    color: $color-text-main;
+}
+
+/*=============================================
+共通部分
+=============================================*/
+body{
+	// width: $layout-width-canvas;
+	max-width: 100%;
+	margin: 0 auto;
+
+}
+
+.inner{
+  max-width: 100%;
+	height: inherit;
+	margin: 0 auto;
+	padding: 0 50px;
+	
+	@include mq('tab'){
+		padding: 0 30px;
+	}
+
+	@include mq('sp'){
+		padding: 0 16px;
+	}
+}
+
+/*=============================================
+header
+=============================================*/
+.header-inner {
+	display: flex;
+	justify-content: space-between;
+	padding: 15px 50px;
+	height: 80px;
+}
+
+.header-logo {
+	img {
+		width: 150px;
+	}
+}
+
+.header-left {
+
+}
+
+
+.header-right {
+	display: flex;
+	align-items: center;
+}
+
+.header-login {
+	margin-right: 15px;
+}
+
+.header-sign-up {
+	margin-right: 15px;
+}
+
+/*=============================================
+footer
+=============================================*/
+.footer-inner {
+	display: flex;
+	align-items: center;
+	height: 40px;
+  justify-content: flex-end;
+  background-color: #3E3E3E;
+  color: #F3F3F3;
+}
