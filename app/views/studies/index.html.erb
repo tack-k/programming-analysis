@@ -1,23 +1,4 @@
-  <header>
-    <div class="inner header-inner">
-      <div class="header-left">
-        <div class="header-logo">
-          <%= link_to image_tag("logo.png"), "#" %>
-        </div>
-      </div>
-      <div class="header-right">
-        <div class="header-login">
-          <%= link_to 'ログイン', '#' %>
-        </div>
-        <div class="header-sign-up">
-          <%= link_to '新規登録', '#' %>
-        </div>
-        <div class="contact-inner">
-          <%= link_to 'お問い合わせ', '#' %>
-        </div>
-      </div>
-    </div>
-  </header>
+<%= render "common/header" %>
 
   <div class="main">
     <div class="main-inner inner">
@@ -32,8 +13,4 @@
     </div>
   </div>
 
-  <footer>
-    <div class="inner footer-inner">
-      <p class="copyright">Copyright © 2020-2020 Tack株式会社 All Rights Reserved.</p>
-    </div>
-  </footer>
+<%= render "common/footer" %>
