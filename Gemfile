@@ -58,4 +58,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # 開発環境
   gem 'pry-rails'           
-
+  gem 'active_hash'

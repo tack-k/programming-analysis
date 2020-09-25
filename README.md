@@ -74,7 +74,7 @@ Things you may want to cover:
 
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
-| content | string     |                                |
+| message | string     |                                |
 | user    | references | null: false, foreign_key: true |
 | room    | references | null: false, foreign_key: true |
 
@@ -82,3 +82,12 @@ Things you may want to cover:
 
 - belongs_to :room
 - belongs_to :user
+
+## studies テーブル
+
+| Column  | Type   | Options     |
+| ------- | ------ | ----------- |
+| method  | string | null: false |
+| content | text   | null: false |
+| reason  | text   | null: false |
+| price   | string | null: false |

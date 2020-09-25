@@ -1,0 +1,108 @@
+ <%= render "common/header" %>
+ 
+  <div class="analysis">
+    <div class="analysis-inner inner">
+      <div class="analysis-container">
+        <!-- 質問1 -->
+        <div class="analysis-wrapper" id="question1">
+          <h2 class="analysis-title" ><%= @analysis1.no %></h2>
+          <p class="analysis-question" ><%= @analysis1.question %></p>
+          <ul class="answer-container">
+            <li class="answer-wrapper">
+              <a href="#answer2-1" class="answer-yes button">Yes</a>
+              <%# <%= link_to 'Yes', analysis_studies_path(anchor: 'answer2-1'), class: "answer-yes button" %>
+            </li>
+            <li class="answer-wrapper">
+              <a href="#answer2-2" class="answer-no button">No</a>
+            </li>  
+          </ul>   
+        </div>
+        <!-- 質問2 -->
+        <div class="analysis-wrapper" id="answer2-1">
+          <h2 class="analysis-title" ><%= @analysis2.no %></h2>
+          <p class="analysis-question" ><%= @analysis2.question %></p>
+          <ul class="answer-container">
+            <li class="answer-wrapper">
+              <a href="#answer3-1" class="answer-yes button">Yes</a>
+            </li>
+            <li class="answer-wrapper">
+              <a href="#answer3-2" class="answer-no button">No</a>
+            </li>  
+          </ul> 
+        </div>
+
+        <div class="analysis-wrapper" id="answer2-2">
+          <h2 class="analysis-title" ><%= @analysis2.no %></h2>
+          <p class="analysis-question" ><%= @analysis2.question %></p>
+          <ul class="answer-container">
+            <li class="answer-wrapper">
+              <a href="#answer3-3" class="answer-yes button">Yes</a>
+            </li>
+            <li class="answer-wrapper">
+              <a href="#answer3-4" class="answer-no button">No</a>
+            </li>  
+          </ul> 
+        </div>
+
+        <!-- 質問3 -->
+        <%= form_with url: root_path, local: true do |f| %>
+        <div class="analysis-wrapper" id="answer3-1">
+          <h2 class="analysis-title" ><%= @analysis3.no %></h2>
+          <p class="analysis-question" ><%= @analysis3.question %></p>
+          <ul class="answer-container">
+            <li class="answer-wrapper">
+            <%= f.submit 'Yes', class: "answer-yes button" %>
+              <a href="#" class="answer-yes button">Yes</a>
+            </li>
+            <li class="answer-wrapper">
+              <a href="#" class="answer-no button">No</a>
+            </li>  
+          </ul> 
+        </div>
+        <% end %>
+
+        <div class="analysis-wrapper" id="answer3-2">
+          <h2 class="analysis-title" ><%= @analysis3.no %></h2>
+          <p class="analysis-question" ><%= @analysis3.question %></p>
+          <ul class="answer-container">
+            <li class="answer-wrapper">
+              <a href="#" class="answer-yes button">Yes</a>
+            </li>
+            <li class="answer-wrapper">
+              <a href="#" class="answer-no button">No</a>
+            </li>  
+          </ul> 
+        </div>
+
+  
+        <div class="analysis-wrapper" id="answer3-3">
+          <h2 class="analysis-title" ><%= @analysis3.no %></h2>
+          <p class="analysis-question" ><%= @analysis3.question %></p>
+          <ul class="answer-container">
+            <li class="answer-wrapper">
+              <a href="#" class="answer-yes button">Yes</a>
+            </li>
+            <li class="answer-wrapper">
+              <a href="#" class="answer-no button">No</a>
+            </li>  
+          </ul> 
+        </div>
+
+        <div class="analysis-wrapper" id="answer3-4">
+          <h2 class="analysis-title" ><%= @analysis3.no %></h2>
+          <p class="analysis-question" ><%= @analysis3.question %></p>
+          <ul class="answer-container">
+            <li class="answer-wrapper">
+              <a href="#" class="answer-yes button">Yes</a>
+            </li>
+            <li class="answer-wrapper">
+              <a href="#" class="answer-no button">No</a>
+            </li>  
+          </ul> 
+        </div>
+   
+      </div>
+    </div>
+  </div>
+
+  <%= render "common/footer" %>
