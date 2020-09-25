@@ -10,6 +10,7 @@
           <ul class="answer-container">
             <li class="answer-wrapper">
               <a href="#answer2-1" class="answer-yes button">Yes</a>
+              <%# <%= link_to 'Yes', analysis_studies_path(anchor: 'answer2-1'), class: "answer-yes button" %>
             </li>
             <li class="answer-wrapper">
               <a href="#answer2-2" class="answer-no button">No</a>
@@ -44,11 +45,13 @@
         </div>
 
         <!-- 質問3 -->
+        <%= form_with url: root_path, local: true do |f| %>
         <div class="analysis-wrapper" id="answer3-1">
           <h2 class="analysis-title" ><%= @analysis3.no %></h2>
           <p class="analysis-question" ><%= @analysis3.question %></p>
           <ul class="answer-container">
             <li class="answer-wrapper">
+            <%= f.submit 'Yes', class: "answer-yes button" %>
               <a href="#" class="answer-yes button">Yes</a>
             </li>
             <li class="answer-wrapper">
@@ -56,6 +59,7 @@
             </li>  
           </ul> 
         </div>
+        <% end %>
 
         <div class="analysis-wrapper" id="answer3-2">
           <h2 class="analysis-title" ><%= @analysis3.no %></h2>
@@ -70,6 +74,7 @@
           </ul> 
         </div>
 
+  
         <div class="analysis-wrapper" id="answer3-3">
           <h2 class="analysis-title" ><%= @analysis3.no %></h2>
           <p class="analysis-question" ><%= @analysis3.question %></p>
