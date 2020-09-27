@@ -1,4 +1,5 @@
 class StudiesController < ApplicationController
+  before_action :set_study, only: [:show, :edit, :update, :destroy]
 
   def index
 
@@ -19,7 +20,27 @@ class StudiesController < ApplicationController
   end
 
   def show
-    @study = Study.find(params[:id])
+
+  end
+
+  def edit
+
+  end
+
+  def update
+    if @study.update(studies_params)
+      redirect_to new_study_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    if @study.destroy
+      redirect_to new_study_path
+    else
+      render :edit
+    end
   end
 
   def analysis
@@ -31,6 +52,10 @@ class StudiesController < ApplicationController
   private
   def studies_params
     params.require(:study).permit(:method, :content, :reason, :price, :image)
+  end
+
+  def set_study
+    @study = Study.find(params[:id])
   end
 
 end

@@ -1,18 +1,18 @@
   <%= form_with model: @study, class: 'registration-main', local: true do |f| %>
   <div class='form-wrap'>
 
-    <div class="form-group">
-      <div class='form-edit-wrap'>
-        <div class="form-edit-text">登録データ一覧編集</div>
-        <% @studys.each do |study| %>
-        <%= link_to study.method, edit_study_path(study.id), class: "edit-text" %>
-        <% end %>
+    <div class="edit-wrap">
+      <div class="edit-button">
+        <%= link_to '一覧へ戻る', new_study_path %>
+      </div>
+      <div class="edit-button destroy-button">
+        <%=  link_to 'データ削除', study_path(@study.id), method: :delete, data: {confirm: "本当に削除しますか?"} %>
       </div>
     </div>
 
     <div class='form-header'>
       <h1 class='form-header-text'>
-        診断結果データ入力
+        診断結果データの内容
       </h1>
     </div>
 
@@ -23,7 +23,7 @@
         <label class="form-text">学習法</label>
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_field :method, class:"input-default", id:"method", placeholder:"例) プロゲート" %>
+      <%= f.text_field :method, class:"input-default", id:"method" %>
     </div>
 
     <div class="form-group">
@@ -64,7 +64,7 @@
     </div>
 
     <div class='register-btn'>
-      <%= f.submit "登録" ,class:"register-color-btn" %>
+      <%= f.submit "編集" ,class:"register-color-btn" %>
     </div>
   </div>
   <% end %>

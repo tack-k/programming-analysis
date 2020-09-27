@@ -65,19 +65,7 @@
   text-align: center;
 }
 
-.form-edit-text {
-  font-size: 2.2rem;
-  font-weight: 700;
-}
 
-.edit-text {
-  color: #0099e8;
-
-  &:hover {
-    opacity: $hover-opacity;
-    color: $color-text-main;
-  }
-}
 
 .input-default {
   width: 100%;
@@ -192,4 +180,43 @@
   font-size: 1.3rem;
   font-weight: 700;
   border-radius: 999px;
+}
+
+/*---------------------------------------
+edit
+--------------------------------------*/
+.edit-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.edit-button {
+  background-color: $color-active;
+  padding: 5px 20px;
+  margin: 0 5%;
+  font-weight: 700;
+  border-radius: 4px;
+
+  a {
+    color: $color-text-second;
+  }
+}
+
+.destroy-button {
+  background-color: #ea352d;
+}
+
+
+.form-edit-text {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.edit-text {
+  color: #0099e8;
+
+  &:hover {
+    opacity: $hover-opacity;
+    color: $color-text-main;
+  }
 }
