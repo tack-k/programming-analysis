@@ -45,30 +45,31 @@
         </div>
 
         <!-- 質問3 -->
-        <%= form_with url: root_path, local: true do |f| %>
         <div class="analysis-wrapper" id="answer3-1">
           <h2 class="analysis-title" ><%= @analysis3.no %></h2>
           <p class="analysis-question" ><%= @analysis3.question %></p>
           <ul class="answer-container">
             <li class="answer-wrapper">
-            <%= f.submit 'Yes', class: "answer-yes button" %>
-              <a href="#" class="answer-yes button">Yes</a>
+            <%# テックキャンプエンジニア転職 %>
+            <%= link_to 'Yes', '/studies/2', class: "answer-yes button" %> 
             </li>
             <li class="answer-wrapper">
+            <%# デイトラ %>
               <a href="#" class="answer-no button">No</a>
             </li>  
           </ul> 
         </div>
-        <% end %>
 
         <div class="analysis-wrapper" id="answer3-2">
           <h2 class="analysis-title" ><%= @analysis3.no %></h2>
           <p class="analysis-question" ><%= @analysis3.question %></p>
           <ul class="answer-container">
             <li class="answer-wrapper">
+            <%# テックキャンププログラミング教養 %>
               <a href="#" class="answer-yes button">Yes</a>
             </li>
             <li class="answer-wrapper">
+            <%# Udemy %>
               <a href="#" class="answer-no button">No</a>
             </li>  
           </ul> 
@@ -80,9 +81,11 @@
           <p class="analysis-question" ><%= @analysis3.question %></p>
           <ul class="answer-container">
             <li class="answer-wrapper">
+            <%# プロゲート %>
               <a href="#" class="answer-yes button">Yes</a>
             </li>
             <li class="answer-wrapper">
+            <%# プロゲート %>
               <a href="#" class="answer-no button">No</a>
             </li>  
           </ul> 
@@ -93,9 +96,11 @@
           <p class="analysis-question" ><%= @analysis3.question %></p>
           <ul class="answer-container">
             <li class="answer-wrapper">
+            <%# プロゲート %>
               <a href="#" class="answer-yes button">Yes</a>
             </li>
             <li class="answer-wrapper">
+            <%# プロゲート %>
               <a href="#" class="answer-no button">No</a>
             </li>  
           </ul> 

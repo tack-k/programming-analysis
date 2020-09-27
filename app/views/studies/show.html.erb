@@ -1,0 +1,47 @@
+<%= render "common/header" %>
+
+  <div class="result">
+    <h2 class="result-title"><%= "診断結果:「#{@study.method}」やろうぜ！" %></h2>
+    <div class="result-inner inner">
+      <div class="result-container">
+        <div class="result-left">
+          <%= link_to image_tag(@study.image, class:"result-image"), "#" %>
+          <%# <a href=""><img src="../progate-image.png" alt="" class="result-image"></a> %>
+        </div>
+        <div class="result-right">
+          <div class="result-content-wrapper">
+            <h3 class="result-content">サービスの内容</h3>
+            <p class="result-content-text"><%= @study.content %></p>
+          </div>
+          <div class="result-reason-wrapper">
+            <h3 class="result-reason">診断結果の理由</h3>
+            <p class="result-reason-text"><%= @study.reason %></p>
+          </div>
+          <div class="result-price-wrapper">
+            <h3 class="result-price">サービス料金</h3>
+            <p class="result-price-text"><%= @study.price %></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="consultation">
+        <div class="consultation-inner">
+          <h2 class="consultation-title">プロのエンジニアに無料相談</h2>
+          <div class="consultation-container">
+            <div class="consultation-wrapper">
+              <div class="consultation-text">
+                そうはいっても、現場で働くエンジニアの意見を聞きたいですよね？未経験からプロのエンジニアになった相談員に無料で相談できます。診断結果だけではわからないあなたの悩みを直接お伺いし、最高の選択肢を一緒に考えます。相談方法はチャットですのでお気軽にご相談ください。ご相談後プログラミング学習サービスの割引クーポンをお送りします。
+              </div>
+              <div class="button-wrapper">
+                <button class="result-button">無料相談する</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <%= render "common/footer" %>

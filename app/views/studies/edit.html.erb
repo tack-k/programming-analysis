@@ -1,0 +1,70 @@
+  <%= form_with model: @study, class: 'registration-main', local: true do |f| %>
+  <div class='form-wrap'>
+
+    <div class="edit-wrap">
+      <div class="edit-button">
+        <%= link_to '一覧へ戻る', new_study_path %>
+      </div>
+      <div class="edit-button destroy-button">
+        <%=  link_to 'データ削除', study_path(@study.id), method: :delete, data: {confirm: "本当に削除しますか?"} %>
+      </div>
+    </div>
+
+    <div class='form-header'>
+      <h1 class='form-header-text'>
+        診断結果データの内容
+      </h1>
+    </div>
+
+    <%#= render 'shared/error_messages', model: f.object %>
+
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">学習法</label>
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_field :method, class:"input-default", id:"method" %>
+    </div>
+
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">サービス内容</label>
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :content, class:"input-area", id:"content", placeholder:"学習サービスの要約を入力" %>
+    </div>
+
+    <div class="form-group">
+      <div class="form-text">
+        サービスイメージ画像
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"item-image" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">診断理由</label>
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :reason, class:"input-area", id:"reason", placeholder:"サービスを勧める理由を入力" %>
+    </div>
+
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">サービス価格</label>
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_field :price, class:"input-default", id:"price", placeholder:"サービスの価格を入力" %>
+    </div>
+
+    <div class='register-btn'>
+      <%= f.submit "編集" ,class:"register-color-btn" %>
+    </div>
+  </div>
+  <% end %>
