@@ -7,4 +7,5 @@ ja:
         reason: 診断理由
         price: サービス価格
         image: サービスイメージ画像
+        url: サービスURL
 

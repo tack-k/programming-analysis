@@ -10,5 +10,6 @@ class Study < ApplicationRecord
     validates :content
     validates :reason
     validates :price
+    validates :url
   end
 end
