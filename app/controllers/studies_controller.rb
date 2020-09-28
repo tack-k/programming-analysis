@@ -2,12 +2,11 @@ class StudiesController < ApplicationController
   before_action :set_study, only: [:show, :edit, :update, :destroy]
 
   def index
-
+    @studys = Study.all
   end
 
   def new
     @study = Study.new
-    @studys = Study.all
   end
 
   def create
@@ -29,7 +28,7 @@ class StudiesController < ApplicationController
 
   def update
     if @study.update(studies_params)
-      redirect_to new_study_path
+      redirect_to studies_path
     else
       render :edit
     end
