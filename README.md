@@ -91,3 +91,4 @@ Things you may want to cover:
 | content | text   | null: false |
 | reason  | text   | null: false |
 | price   | string | null: false |
+| url     | text   | null: false |
