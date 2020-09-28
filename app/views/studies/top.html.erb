@@ -1,0 +1,16 @@
+<%= render "common/header" %>
+
+  <div class="main">
+    <div class="main-inner inner">
+      <div class="main-container">
+        <h1 class="main-title">プログラミング学習診断・相談</h1>
+        <h2 class="main-subtitle">3つの質問に答えるだけであなたに最適なプログラミング学習法が必ず見つかる！</h2>
+        <p class="main-lead">診断後、現在活躍中のエンジニアと無料相談できます。相談者限定で学習にお得なクーポンを配布しています</p>
+        <div class="button-wrapper">
+        <%= link_to '学習法診断を始める', analysis_studies_path, class: "main-button", data: {"turbolinks": false} %>
+        </div>       
+      </div>
+    </div>
+  </div>
+
+<%= render "common/footer" %>

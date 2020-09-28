@@ -1,59 +1,52 @@
-/*=============================================
-main
-=============================================*/
-.main-inner {
-	background: image-url("main-image.jpg") no-repeat center center;
-	background-size: cover;
-	padding-top: 5%;
-	padding-bottom: 10%;
+.index-inner {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 50px;
 }
 
-.main-container {
-	padding: 5%;
-	background-color: rgba($color: $color-background-main, $alpha: 0.9);
-	width: 80%;
-	margin: 0 auto;
-
-}
-
-.main-title {
-	font-size: 6rem;
-	font-weight: 700;
+.index-title {
+  font-size: 3rem;
+  font-weight: 700;
   text-align: center;
-  background-color: $color-background-second;
+  margin-bottom: 50px;
+}
+
+.study-new {
+  margin: 5% 5%;
+  text-align: right;
+}
+
+.new-button {
+  background-color: $color-active;
   color: $color-text-second;
+  padding: 10px 20px;
+  font-weight: 700;
   border-radius: 4px;
-  margin-bottom: 10px;
+
+  &:hover {
+    opacity: $hover-opacity;
+  }
 }
 
-.main-subtitle {
-font-size: 3.5rem;
-margin-bottom: 20px;
+.index-contens {
+  background-color: #fff;
+  padding: 50px;
 }
 
-.main-lead {
-margin-bottom: 30px;
-font-size: 2.5rem;
+.index-content {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
-.button-wrapper {
-	text-align: center;
-
-	:hover {
-		cursor: pointer;
-		opacity: $hover-opacity;
-	}
-}
-
-.main-button {
-border-radius: 999px;	
-background-color: $color-active;
-border: none;
-color: $color-text-second;
-padding: 8px 10px;
-font-size: 3rem;
-font-weight: 700;
-width: 350px;
-box-shadow: 0px 3px 5px 0px rgba(62, 62, 62, 0.5);
-
+.index-text {
+  &:hover {
+    color: #0099e8;
+    opacity: $hover-opacity;
+  }
 }

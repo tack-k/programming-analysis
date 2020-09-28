@@ -1,22 +1,13 @@
   <%= form_with model: @study, class: 'registration-main', local: true do |f| %>
   <div class='form-wrap'>
 
-    <div class="form-group">
-      <div class='form-edit-wrap'>
-        <div class="form-edit-text">登録データ一覧編集</div>
-        <% @studys.each do |study| %>
-        <%= link_to study.method, edit_study_path(study.id), class: "edit-text" %>
-        <% end %>
-      </div>
-    </div>
-
     <div class='form-header'>
       <h1 class='form-header-text'>
         診断結果データ入力
       </h1>
     </div>
 
-    <%#= render 'shared/error_messages', model: f.object %>
+    <%= render 'common/error_messages', model: f.object %>
 
     <div class="form-group">
       <div class='form-text-wrap'>
