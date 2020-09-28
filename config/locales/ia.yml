@@ -1,0 +1,10 @@
+ja:
+  activerecord:
+    attributes:
+      study:
+        method: 学習法
+        content: サービス内容
+        reason: 診断理由
+        price: サービス価格
+        image: サービスイメージ画像
+
