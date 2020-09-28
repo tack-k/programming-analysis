@@ -28,7 +28,7 @@ class StudiesController < ApplicationController
 
   def update
     if @study.update(studies_params)
-      redirect_to new_study_path
+      redirect_to studies_path
     else
       render :edit
     end
