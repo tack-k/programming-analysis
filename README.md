@@ -36,9 +36,6 @@ Things you may want to cover:
 | email              | string  | null: false              |
 | passwordencrypted_ | string  | null: false              |
 | result             | string  | null: false, active hash |
-| name               | string  | null: false              |
-| name_kana          | string  | null: false              |
-| birthday           | date    | null: false              |
 | admin              | boolean | default: false           |
 
 ### Association
