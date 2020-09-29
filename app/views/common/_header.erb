@@ -9,9 +9,18 @@
         <div class="header-login">
           <%= link_to 'データ編集', new_study_path %>
         </div>
+
         <div class="header-login">
           <%= link_to 'ログイン', '#' %>
         </div>
+        <% if user_signed_in? %>
+        <div class="header-login">
+          <%= link_to current_user.username, '#' %>
+        </div>
+        <div class="header-login">
+          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+        </div>
+        <% end %>
         <div class="header-sign-up">
           <%= link_to '新規登録', 'new_user_registration_path' %>
         </div>
