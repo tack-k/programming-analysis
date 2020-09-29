@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
   root to: 'studies#top'
+  devise_for :users
   resources :studies do
   collection do
     get 'analysis'
