@@ -8,4 +8,11 @@ ja:
         price: サービス価格
         image: サービスイメージ画像
         url: サービスURL
+      user:
+        username: ユーザーネーム
+        result: 診断結果
+        reason: 診断理由
+        price: サービス価格
+        image: サービスイメージ画像
+        url: サービスURL
 
