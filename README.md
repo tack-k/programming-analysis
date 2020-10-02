@@ -52,7 +52,7 @@ Things you may want to cover:
 ### Association
 
 - has_many :room_admins
-- has_many :rooms, through: room_admins
+- has_many :rooms, through: :room_admins
 - has_many :messages
 
 ## rooms テーブル
@@ -64,7 +64,7 @@ Things you may want to cover:
 ### Association
 
 - has_many :room_admins
-- has_many :admins, through: room_admins
+- has_many :admins, through: :room_admins
 - belongs_to :users
 - has_many :messages
 
