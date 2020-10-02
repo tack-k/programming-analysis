@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
-  root to: 'studies#top'
+  devise_for :admins, controllers: {
+    registrations: 'admins/registrations',
+    sessions: 'admins/sessions'
+  }
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions'
   }
+  root to: 'studies#top'
+
 
   resources :studies do
     collection do
