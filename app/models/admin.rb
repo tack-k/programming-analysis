@@ -7,4 +7,6 @@ class Admin < ApplicationRecord
   has_many :room_admins
   has_many :rooms, through: :room_admins
   has_many :messages
+
+  validates :name, presence: true
 end
