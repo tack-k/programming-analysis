@@ -48,8 +48,8 @@ ActiveRecord::Schema.define(version: 2020_10_01_133744) do
 
   create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "message", null: false
-    t.bigint "admin_id", null: false
-    t.bigint "user_id", null: false
+    t.bigint "admin_id"
+    t.bigint "user_id"
     t.bigint "room_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -88,7 +88,7 @@ ActiveRecord::Schema.define(version: 2020_10_01_133744) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "username", null: false
-    t.string "result", null: false
+    t.integer "result_id", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

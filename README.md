@@ -32,7 +32,7 @@ Things you may want to cover:
 | username           | string  | null: false              |
 | email              | string  | null: false              |
 | passwordencrypted_ | string  | null: false              |
-| result             | string  | null: false, active hash |
+| result_id          | integer | null: false, active hash |
 
 
 ### Association
@@ -85,8 +85,8 @@ Things you may want to cover:
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
 | message | text       | null: false                    |
-| admin   | references | null: false, foreign_key: true |
-| user    | references | null: false, foreign_key: true |
+| admin   | references | foreign_key: true              |
+| user    | references | foreign_key: true              |
 | room    | references | null: false, foreign_key: true |
 
 ### Association
