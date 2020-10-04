@@ -42,7 +42,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :result])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :result_id])
   end
 
   # If you have extra params to permit, append them to the sanitizer.
@@ -53,7 +53,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # The path used after sign up.
   def after_sign_up_path_for(resource)
     # super(resource)
-    analysis_studies_path
+    new_room_path(resource)
   end
 
   # The path used after sign up for inactive accounts.
