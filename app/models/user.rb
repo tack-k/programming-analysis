@@ -4,8 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_one :rooms
+  has_one :room
   has_many :messages
+  
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :result
 
   with_options presence: true do
     validates :username
