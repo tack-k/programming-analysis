@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   }
   root to: 'studies#top'
 
+  resources :rooms, only:[:index, :new, :create] do
+    resources :messages, only:[:index, :new, :create]
+  end
 
   resources :studies do
     collection do
