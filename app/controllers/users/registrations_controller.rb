@@ -12,6 +12,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
+    if @user.save
+    Room.create(user_id: current_user.id)
+    end
   end
 
   # GET /resource/edit
