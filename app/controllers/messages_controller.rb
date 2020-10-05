@@ -4,7 +4,7 @@ class MessagesController < ApplicationController
     @users = User.all
     @message = Message.new
     @room = Room.find(params[:room_id])
-    @messages = @room.messages.includes(:user)
+    @messages = @room.messages.includes(:admin)
   end
 
   def create
