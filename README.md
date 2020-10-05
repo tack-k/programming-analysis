@@ -27,57 +27,72 @@ Things you may want to cover:
 
 ## users テーブル
 
-
-## users テーブル
-
 | Column             | Type    | Options                  |
 | ------------------ | ------- | ------------------------ |
 | username           | string  | null: false              |
 | email              | string  | null: false              |
 | passwordencrypted_ | string  | null: false              |
-| result             | string  | null: false, active hash |
-| admin              | boolean | default: false           |
+| result_id          | integer | null: false, active hash |
+
 
 ### Association
 
-- has_many :room_users
-- has_many :rooms, through: room_users
+- has_one :rooms
+- has_many :messages
+
+## admins テーブル
+
+| Column             | Type    | Options                  |
+| ------------------ | ------- | ------------------------ |
+| name               | string  | null: false              |
+| email              | string  | null: false              |
+| passwordencrypted_ | string  | null: false              |
+
+
+### Association
+
+- has_many :room_admins
+- has_many :rooms, through: :room_admins
 - has_many :messages
 
 ## rooms テーブル
 
-| Column | Type   | Options     |
-| ------ | ------ | ----------- |
-
-### Association
-
-- has_many :room_users
-- has_many :users, through: room_users
-- has_many :messages
-
-## room_users テーブル
-
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
 | user   | references | null: false, foreign_key: true |
+
+### Association
+
+- has_many :room_admins
+- has_many :admins, through: :room_admins
+- belongs_to :users
+- has_many :messages
+
+## room_admins テーブル
+
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| admin  | references | null: false, foreign_key: true |
 | room   | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :room
-- belongs_to :user
+- belongs_to :admin
 
 ## messages テーブル
 
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
-| message | string     |                                |
-| user    | references | null: false, foreign_key: true |
+| message | text       | null: false                    |
+| admin   | references | foreign_key: true              |
+| user    | references | foreign_key: true              |
 | room    | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :room
+- belongs_to :admin
 - belongs_to :user
 
 ## studies テーブル

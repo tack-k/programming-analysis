@@ -1,0 +1,71 @@
+<div class="wrapper">
+  <div class="side-bar">
+    <div class="side-bar-header">
+      <div class="header-name">
+        <%= current_user.username %>
+      </div>
+    </div>
+
+    <%# if admin_signed_in? %>
+    <div class="rooms">
+      <% @users.each do |user| %>
+      <div class="room">
+        <div class="room-name">
+        <%#= link_to user.username, room_messages_path(user.room.id) %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <%# end %>
+
+  </div>
+
+  <div class="chat">
+    <div class="chat-header">
+      <div class="left-header">
+        <div class="header-title">
+          オススメの学習法 <%= current_user.result.title %>
+        </div>
+      </div>
+      <div class="right-header">
+        <div class="header-button">
+          <%= link_to 'チャット終了', '/' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="messages">
+      <div class="message">
+
+        <div class="message-login" id="messages">
+          <% @messages.reverse_each do |message| %>
+          <div class="upper-message">
+            <div class="message-date">
+              <%= message.created_at %>
+            </div>
+          </div>
+          <div class="lower-message">
+            <div class="message-content">
+              <%= message.message %>
+            </div>
+          </div>
+          <% end %>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="form-wrapper">
+      <%= form_with url: room_messages_path(@room.id) , local: true do |f| %>
+      <div class="form">
+        <div class="form-input">
+          <%= f.text_field :message, class: "form-message", placeholder: "メッセージを入力", id: "message-text" %>
+        </div>
+        <%= f.submit '送信', class: "form-submit", id: "message-submit" %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+
+</div>

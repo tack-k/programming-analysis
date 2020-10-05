@@ -1,0 +1,17 @@
+.guide-room-btn {
+  font-size: 5rem;
+  background-color: $color-background-second;
+  color: $color-text-second;
+  display: inline-block;
+  padding: 3%;
+  font-weight: 700;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all, 1s, ease;
+
+  &:hover {
+    opacity: $hover-opacity;
+  }
+}

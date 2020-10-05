@@ -34,7 +34,7 @@
       <label class="form-text">診断結果</label>
       <span class="indispensable">必須</span>
     </div>
-    <%= f.collection_select(:result, Result.all, :id, :title, {}, {class:"input-default", id:"result"}) %>
+    <%= f.collection_select(:result_id, Result.all, :id, :title, {}, {class:"input-default", id:"result"}) %>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
