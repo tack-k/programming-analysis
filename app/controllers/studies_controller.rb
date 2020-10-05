@@ -48,6 +48,10 @@ class StudiesController < ApplicationController
     @analysis3 = Analysis.find(3)
   end
 
+  def finish
+    
+  end
+
   private
   def studies_params
     params.require(:study).permit(:method, :content, :reason, :price, :image)
