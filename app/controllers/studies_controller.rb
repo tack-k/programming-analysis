@@ -48,6 +48,11 @@ class StudiesController < ApplicationController
     @analysis3 = Analysis.find(3)
   end
 
+  def finish
+    @user = current_user
+    NotificationMailer.send_mail_to_user(@user).deliver
+  end
+
   private
   def studies_params
     params.require(:study).permit(:method, :content, :reason, :price, :image)

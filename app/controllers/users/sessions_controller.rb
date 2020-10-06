@@ -26,6 +26,6 @@ class Users::SessionsController < Devise::SessionsController
   # end
 
   def after_sign_in_path_for(resource)
-    room_messages_path(resource)
+    new_room_path(resource)
   end
 end

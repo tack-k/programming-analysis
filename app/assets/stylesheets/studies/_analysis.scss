@@ -56,6 +56,10 @@ width: 200px;
 box-shadow: 0px 3px 5px 0px rgba(62, 62, 62, 0.5);
 }
 
+.button-last {
+	@extend .button
+}
+
 .answer-yes {
 	background-color: #FF6928;
 	padding: 8px 50px;

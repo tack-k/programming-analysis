@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     collection do
       get 'analysis'
       get 'top'
+      get 'finish'
     end
   end
 end
