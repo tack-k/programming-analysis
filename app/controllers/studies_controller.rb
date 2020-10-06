@@ -49,7 +49,8 @@ class StudiesController < ApplicationController
   end
 
   def finish
-    
+    @user = current_user
+    NotificationMailer.send_mail_to_user(@user).deliver
   end
 
   private
