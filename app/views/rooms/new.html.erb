@@ -1,5 +1,16 @@
 <div class="guide-room">
+  <%= form_with model: @room, local: true do |f| %>
   <div class="guide-room-button">
-  <%= link_to 'チャットを開始する', room_messages_path(@room.id), class: "guide-room-btn" %>
+
+
+    <% if user_signed_in? %>
+    <%= link_to 'チャットを開始する', room_messages_path(current_user.room.id), class: "guide-room-btn" %>
+        <% else %>
+    <% @admins.each do |admin| %>
+    <input name="room[admin_ids][]" type="text" value=<%= admin.id %>>
+    <% end %>
+    <%= f.submit 'チャットを開始する', class: "guide-room-btn" %>
+    <% end %>
   </div>
+  <% end %>
 </div>
