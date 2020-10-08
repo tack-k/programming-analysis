@@ -1,9 +1,11 @@
+  <%= render "common/header_management" %>
+  
   <%= form_with model: @study, class: 'registration-main', local: true do |f| %>
   <div class='form-wrap'>
 
     <div class="edit-wrap">
       <div class="edit-button">
-        <%= link_to '一覧へ戻る', new_study_path %>
+        <%= link_to '一覧へ戻る', studies_path %>
       </div>
       <div class="edit-button destroy-button">
         <%=  link_to 'データ削除', study_path(@study.id), method: :delete, data: {confirm: "本当に削除しますか?"} %>
