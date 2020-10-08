@@ -8,7 +8,6 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     sessions: 'users/sessions'
   }
-  # resources :admin, only: [:index]
 
   root to: 'studies#top'
 
