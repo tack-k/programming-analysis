@@ -1,5 +1,4 @@
 class MessagesController < ApplicationController
-
   def index
     @users = User.all
     @message = Message.new
@@ -9,14 +8,17 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new(message_params)
-    if @message.save
-      ActionCable.server.broadcast 'message_channel', content: @message
-    end
+    ActionCable.server.broadcast 'message_channel', content: @message if @message.save
   end
 
-
   private
+
   def message_params
-    params.permit(:message, :admin_id, :user_id, :room_id).merge(user_id: current_user.id)
+    if user_signed_in?
+      params.permit(:message, :room_id).merge(user_id: current_user.id)
+
+    elsif admin_signed_in?
+      params.permit(:message, :room_id).merge(admin_id: current_admin.id)
+    end
   end
 end
