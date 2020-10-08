@@ -2,19 +2,19 @@
   <div class="side-bar">
     <div class="side-bar-header">
       <div class="header-name">
-        <%= current_user.username %>
+        <%#= current_user.username %>
       </div>
     </div>
 
     <%# if admin_signed_in? %>
     <div class="rooms">
-      <% @users.each do |user| %>
+      <%# @users.each do |user| %>
       <div class="room">
         <div class="room-name">
         <%#= link_to user.username, room_messages_path(user.room.id) %>
         </div>
       </div>
-      <% end %>
+      <%# end %>
     </div>
     <%# end %>
 
@@ -24,7 +24,7 @@
     <div class="chat-header">
       <div class="left-header">
         <div class="header-title">
-          オススメの学習法 <%= current_user.result.title %>
+          オススメの学習法 <%#= current_user.result.title %>
         </div>
       </div>
       <div class="right-header">

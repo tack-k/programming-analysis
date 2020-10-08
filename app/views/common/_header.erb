@@ -10,11 +10,12 @@
           <%= link_to 'データ編集', new_study_path %>
         </div>
 
-        <% if user_signed_in? %>
+        <% if admin_signed_in? %>
         <div class="header-login">
           <%= link_to '管理者仮ログアウト', destroy_admin_session_path, method: :delete %>
         </div>
         <% end %>
+
 
         <% if user_signed_in? %>
         <div class="header-login">

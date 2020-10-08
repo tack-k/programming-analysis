@@ -2,7 +2,7 @@ class StudiesController < ApplicationController
   before_action :set_study, only: [:show, :edit, :update, :destroy]
 
   def index
-    @studys = Study.all
+    @studies = Study.all
   end
 
   def new
