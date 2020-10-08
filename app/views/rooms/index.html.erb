@@ -1,0 +1,21 @@
+<div class="wrapper">
+  <div class="side-bar">
+    <div class="side-bar-header">
+      <div class="header-name">
+        <%#= current_user.username %>
+        <%= current_admin.name %>
+      </div>
+    </div>
+
+    <%# if admin_signed_in? %>
+    <div class="rooms">
+      <% @rooms.each do |room| %>
+      <div class="room">
+        <div class="room-name">
+        <%#= link_to user.username, room_messages_path(user.id) %>
+        <%= link_to room.id,  room_messages_path(room.id) %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <%# end %>
