@@ -1,4 +1,6 @@
 class MessagesController < ApplicationController
+  
+
   def index
     @users = User.all
     @message = Message.new

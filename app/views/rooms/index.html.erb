@@ -3,7 +3,7 @@
     <div class="side-bar-header">
       <div class="header-name">
         <%#= current_user.username %>
-        <%= current_admin.name %>
+        <%= link_to current_admin.name, admins_index_path %>
       </div>
     </div>
 
