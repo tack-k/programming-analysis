@@ -1,7 +1,7 @@
 class RoomsController < ApplicationController
 
   def index
-    @rooms = Room.includes(:messages).order("messages.created_at") #orderで他テーブル使う場合はjoinsで内部結合する
+    @rooms = Room.includes(:messages).order("messages.created_at DESC") 
     @users = User.all
   end
 
