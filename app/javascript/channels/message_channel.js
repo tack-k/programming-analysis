@@ -13,16 +13,15 @@ consumer.subscriptions.create("MessageChannel", {
 
   received(data) {
     const html = `
-    <div class="upper-message">
-    <div class="message-date">
-    <P>${data.content.created_at}</P>
-    </div>
-  </div>
-  <div class="lower-message">
-    <div class="message-content" >
-    <P>${data.content.message}</P>
-    </div>
-  </div>`
+
+    <div class="message-wrapper-right">
+      <div class="message-date">
+      <P>${data.content.created_at}</P>
+      </div>
+      <div class="message-content">
+      <P>${data.content.message}</P>
+      </div>
+    </div>`
     ;
     const messages = document.getElementById('messages');
     const newMessage = document.getElementById('message-text');

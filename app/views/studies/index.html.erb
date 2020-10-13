@@ -1,17 +1,41 @@
-<div class="index">
-  <div class="index-inner">
-      <h2 class="index-title">登録データ一覧</h2>
+  <%= render "common/header_management" %>
 
-      <div class="study-new">
-        <%= link_to '新規データ登録', new_study_path, class: "new-button" %>
+  <div class="management">
+      <div class="manegement-top">
+        <div class="manegement-title">管理データ</div>
+        <div class="new-manegement-button">
+          <%= link_to '新規作成', new_study_path, class:"new-manegement-btn" %>
+        </div>
       </div>
-      <ul class="index-contens">
-        <% @studys.each do |study| %>
-        <li class="index-content">
-          <%= link_to study.method, edit_study_path(study.id), class: "index-text" %>
-        </li>
-        <% end %>
-      </ul>
-    </div>
+    <div class="management-inner">
+      <div class="manegement-index">
+        <table class="management-table">
+          <tr class="management-record-h">
+            <th>id</th>
+            <th>method</th>
+            <th>content</th>
+            <th>reason</th>
+            <th>price</th>
+            <th>image</th>
+            <th>created_at</th>
+            <th>編集</th>
+            <th>削除</th>
+          </tr>
+          <% @studies.each do |study| %>
+          <tr class="management-record-d">
+            <td><%= study.id %></td>
+            <td><%= study.method %></td>
+            <td><%= study.content %></td>
+            <td><%= study.reason %></td>
+            <td><%= study.price %></td>
+            <td><%= image_tag study.image %></td>
+            <td><%= study.created_at %></td>
+            <td><%= link_to image_tag("edit-image.png", class:"edit-image"), edit_study_path(study.id) %></td>
+            <td><%= link_to image_tag("delete-image.png", class:"delete-image"),  study_path(study.id), method: :delete, data: {confirm: "本当に削除しますか?"}   %></td>
 
-</div>
+          </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </div>

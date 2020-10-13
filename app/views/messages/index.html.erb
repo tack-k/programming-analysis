@@ -2,19 +2,19 @@
   <div class="side-bar">
     <div class="side-bar-header">
       <div class="header-name">
-        <%= current_user.username %>
+        <%#= current_user.username %>
       </div>
     </div>
 
     <%# if admin_signed_in? %>
     <div class="rooms">
-      <% @users.each do |user| %>
+      <%# @users.each do |user| %>
       <div class="room">
         <div class="room-name">
-        <%#= link_to user.username, room_messages_path(user.room.id) %>
+          <%#= link_to user.username, room_messages_path(user.room.id) %>
         </div>
       </div>
-      <% end %>
+      <%# end %>
     </div>
     <%# end %>
 
@@ -24,12 +24,16 @@
     <div class="chat-header">
       <div class="left-header">
         <div class="header-title">
-          オススメの学習法 <%= current_user.result.title %>
+          オススメの学習法 <%#= current_user.result.title %>
         </div>
       </div>
       <div class="right-header">
         <div class="header-button">
+          <% if user_signed_in? %>
           <%= link_to 'チャット終了', finish_studies_path %>
+          <% elsif admin_signed_in? %>
+          <%= link_to 'チャット終了', rooms_path %>
+          <% end %>
         </div>
       </div>
     </div>
@@ -37,20 +41,57 @@
     <div class="messages">
       <div class="message">
 
+        <% if user_signed_in? %>
         <div class="message-login" id="messages">
           <% @messages.reverse_each do |message| %>
-          <div class="upper-message">
+          <% if message.user_id %>
+          <div class="message-wrapper-right">
             <div class="message-date">
               <%= message.created_at %>
             </div>
+            <div class="message-content">
+              <%= message.message %>
+            </div>
           </div>
-          <div class="lower-message">
+          <% else %>
+          <div class="message-wrappwer-left">
+            <div class="message-date">
+              <%= message.created_at %>
+            </div>
             <div class="message-content">
               <%= message.message %>
             </div>
           </div>
           <% end %>
+          <% end %>
         </div>
+        <% end %>
+
+                <% if admin_signed_in? %>
+        <div class="message-login" id="messages">
+          <% @messages.reverse_each do |message| %>
+          <% if message.admin_id %>
+          <div class="message-wrapper-right">
+            <div class="message-date">
+              <%= message.created_at %>
+            </div>
+            <div class="message-content">
+              <%= message.message %>
+            </div>
+          </div>
+          <% else %>
+          <div class="message-wrappwer-left">
+            <div class="message-date">
+              <%= message.created_at %>
+            </div>
+            <div class="message-content">
+              <%= message.message %>
+            </div>
+          </div>
+          <% end %>
+          <% end %>
+        </div>
+        <% end %>
 
       </div>
     </div>

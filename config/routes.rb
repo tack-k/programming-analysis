@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'admins/index'
   devise_for :admins, controllers: {
     registrations: 'admins/registrations',
     sessions: 'admins/sessions'
@@ -7,6 +8,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     sessions: 'users/sessions'
   }
+
   root to: 'studies#top'
 
   resources :rooms, only:[:index, :new, :create] do

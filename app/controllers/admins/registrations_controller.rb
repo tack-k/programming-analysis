@@ -25,9 +25,10 @@ class Admins::RegistrationsController < Devise::RegistrationsController
   # end
 
   # DELETE /resource
-  # def destroy
-  #   super
-  # end
+  def destroy
+    super
+    admins_index_path(resource)
+  end
 
   # GET /resource/cancel
   # Forces the session data which is usually expired after sign
@@ -51,12 +52,14 @@ class Admins::RegistrationsController < Devise::RegistrationsController
   # end
 
   # The path used after sign up.
-  # def after_sign_up_path_for(resource)
-  #   super(resource)
-  # end
+  def after_sign_up_path_for(resource)
+    #super(resource)
+    admins_index_path(resource)
+  end
 
   # The path used after sign up for inactive accounts.
-  # def after_inactive_sign_up_path_for(resource)
-  #   super(resource)
-  # end
+  def after_inactive_sign_up_path_for(resource)
+  #super(resource)
+  admins_index_path(resource)
+  end
 end
