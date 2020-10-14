@@ -19,6 +19,14 @@ class RoomsController < ApplicationController
     end
   end
 
+  def login
+    @room = Room.find_by(user_id: current_user.id)
+    if @room == nil
+      redirect_to new_room_path
+    end
+  end
+
+
 private
 
 def room_params
