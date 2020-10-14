@@ -2,9 +2,9 @@ class MessagesController < ApplicationController
   
 
   def index
-    @users = User.all
     @message = Message.new
     @room = Room.find(params[:room_id])
+    @user = User.find_by(id: @room.user_id)
     @messages = @room.messages.includes(:admin)
   end
 

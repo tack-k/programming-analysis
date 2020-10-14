@@ -2,7 +2,6 @@ class RoomsController < ApplicationController
 
   def index
     @rooms = Room.includes(:messages).order("messages.created_at DESC") 
-    @users = User.all
   end
 
   def new

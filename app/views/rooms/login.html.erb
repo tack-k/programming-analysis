@@ -1,3 +1,16 @@
+<div class="wrapper">
+  <div class="side-bar">
+    <div class="side-bar-header">
+      <div class="header-name">
+        <%= current_user.username %>
+      </div>
+    </div>
+
+    <div class="rooms">
+    </div>
+  </div>
+</div>
+
 <div class="guide-room">
   <div class="guide-room-button">
     <%= link_to 'チャットを開始する', room_messages_path(@room.id), class: "guide-room-btn" %>

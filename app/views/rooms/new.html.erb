@@ -1,12 +1,24 @@
-<div class="guide-room">
-  <%= form_with model: @room, local: true do |f| %>
-  <div class="guide-room-button">
+<div class="wrapper">
+  <div class="side-bar">
+    <div class="side-bar-header">
+      <div class="header-name">
+        <%= current_user.username %>
+      </div>
+    </div>
 
-
-    <% @admins.each do |admin| %>
-    <input name="room[admin_ids][]" type="hidden" value=<%= admin.id %>>
-    <% end %>
-    <%= f.submit 'チャットを開始する', class: "guide-room-btn" %>
+    <div class="rooms">
+    </div>
   </div>
-  <% end %>
-</div>
+
+  <div class="guide-room">
+    <%= form_with model: @room, local: true do |f| %>
+    <div class="guide-room-button">
+
+
+      <% @admins.each do |admin| %>
+      <input name="room[admin_ids][]" type="hidden" value=<%= admin.id %>>
+      <% end %>
+      <%= f.submit 'チャットを開始する', class: "guide-room-btn" %>
+    </div>
+    <% end %>
+  </div>
