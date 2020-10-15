@@ -191,7 +191,7 @@ study#edit
 }
 
 .edit-button {
-  background-color: $color-active;
+  background-color: $color-background-second;
   padding: 5px 20px;
   margin: 0 5%;
   font-weight: 700;
@@ -203,7 +203,10 @@ study#edit
 }
 
 .destroy-button {
-  background-color: #ea352d;
+  background-color:#d8d7b6;
+  a {
+    color: $color-text-main;
+  }
 }
 
 /*---------------------------------------
