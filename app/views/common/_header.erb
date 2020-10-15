@@ -24,14 +24,10 @@
         <div class="header-login">
           <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
         </div>
-        <% else %>
-        <div class="header-sign-up">
-          <%= link_to '新規登録', new_user_registration_path %>
-        </div>
-        <div class="header-login">
-          <%= link_to 'ログイン', new_user_session_path %>
-        </div>
         <% end %>
+        <div class="header-login">
+          <%= link_to 'チャット相談', new_user_session_path %>
+        </div>
         <div class="contact-inner">
           <%= link_to 'お問い合わせ', '#' %>
         </div>
