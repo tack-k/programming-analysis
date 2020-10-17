@@ -34,7 +34,7 @@
               </div>
               <div class="button-wrapper">
               <% if user_signed_in? %>
-              <%= link_to '無料相談する',  new_room_path, class: "result-button" %>
+              <%= link_to '無料相談する', login_rooms_path, class: "result-button" %>
               <% else %>
               <%= link_to '無料相談する', new_user_registration_path, class: "result-button" %>
               <% end %>
