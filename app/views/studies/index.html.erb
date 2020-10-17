@@ -17,6 +17,7 @@
             <th>reason</th>
             <th>price</th>
             <th>image</th>
+            <th>url</th>
             <th>created_at</th>
             <th>編集</th>
             <th>削除</th>
@@ -29,6 +30,7 @@
             <td><%= study.reason %></td>
             <td><%= study.price %></td>
             <td><%= image_tag study.image %></td>
+            <td><%= study.url %></td>
             <td><%= study.created_at %></td>
             <td><%= link_to image_tag("edit-image.png", class:"edit-image"), edit_study_path(study.id) %></td>
             <td><%= link_to image_tag("delete-image.png", class:"delete-image"),  study_path(study.id), method: :delete, data: {confirm: "本当に削除しますか?"}   %></td>
