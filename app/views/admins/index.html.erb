@@ -3,6 +3,14 @@
   <div class="management">
     <div class="manegement-top">
       <div class="manegement-title">管理者</div>
+      <div class="new-manegement-wrapper">
+        <div class="new-manegement-button">
+          <%= link_to '編集', edit_admin_registration_path, class:"new-manegement-btn" %>
+        </div>
+        <div class="new-manegement-button">
+          <%= link_to '削除', admin_registration_path, method: :delete, data: {confirm: "本当に削除しますか?"}, class:"new-manegement-btn" %>
+        </div>
+      </div>
     </div>
     <div class="management-inner">
       <div class="manegement-index">
@@ -12,8 +20,6 @@
             <th>name</th>
             <th>email</th>
             <th>created_at</th>
-            <th>編集</th>
-            <th>削除</th>
           </tr>
           <% @admins.each do |admin| %>
           <tr class="management-record-d">
@@ -21,11 +27,6 @@
             <td><%= admin.name %></td>
             <td><%= admin.email %></td>
             <td><%= admin.created_at %></td>
-            <td><%= link_to image_tag("edit-image.png", class:"edit-image"), edit_admin_registration_path %></td>
-            <td>
-              <%= link_to image_tag("delete-image.png", class:"delete-image"), admin_registration_path, method: :delete, data: {confirm: "本当に削除しますか?"}   %>
-            </td>
-
           </tr>
           <% end %>
         </table>

@@ -17,6 +17,14 @@
   font-weight: 700;
 }
 
+.new-manegement-wrapper {
+  display: flex;
+}
+
+.new-manegement-button {
+  margin-left: 20px;
+}
+
 .new-manegement-btn {
   font-size: 2rem;
   background-color: $color-background-second;
