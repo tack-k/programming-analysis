@@ -1,5 +1,6 @@
 class StudiesController < ApplicationController
   before_action :set_study, only: [:show, :edit, :update, :destroy]
+  before_action :move_root_no_login, only: :finish
 
   def index
     @studies = Study.all
@@ -13,7 +14,7 @@ class StudiesController < ApplicationController
   def create
     @study = Study.new(studies_params)
     if @study.save
-      redirect_to  studies_path
+      redirect_to studies_path
     else
       render :new
     end
@@ -61,6 +62,12 @@ class StudiesController < ApplicationController
 
   def set_study
     @study = Study.find(params[:id])
+  end
+
+  def move_root_no_login
+    unless user_signed_in?
+      redirect_to root_path
+    end
   end
 
 end
