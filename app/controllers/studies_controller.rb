@@ -3,6 +3,7 @@ class StudiesController < ApplicationController
 
   def index
     @studies = Study.all
+    @admins = Admin.all
   end
 
   def new
@@ -12,7 +13,7 @@ class StudiesController < ApplicationController
   def create
     @study = Study.new(studies_params)
     if @study.save
-      redirect_to new_study_path
+      redirect_to  studies_path
     else
       render :new
     end
@@ -36,7 +37,7 @@ class StudiesController < ApplicationController
 
   def destroy
     if @study.destroy
-      redirect_to new_study_path
+      redirect_to  studies_path
     else
       render :edit
     end
@@ -55,7 +56,7 @@ class StudiesController < ApplicationController
 
   private
   def studies_params
-    params.require(:study).permit(:method, :content, :reason, :price, :image)
+    params.require(:study).permit(:method, :content, :reason, :price, :image, :url)
   end
 
   def set_study
