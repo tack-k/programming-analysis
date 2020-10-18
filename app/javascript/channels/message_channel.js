@@ -14,20 +14,25 @@ consumer.subscriptions.create("MessageChannel", {
   received(data) {
     const html = `
 
-    <div class="message-wrapper-right">
+
       <div class="message-date">
       <P>${data.content.created_at}</P>
       </div>
       <div class="message-content">
       <P>${data.content.message}</P>
-      </div>
-    </div>`
+      </div>`
     ;
-    const messages = document.getElementById('messages');
+    const messageAdmin = document.getElementsByClassName('message-admin');
+    const messageUser = document.getElementsByClassName('message-user');
     const newMessage = document.getElementById('message-text');
     const submitMessage = document.getElementById('message-submit');
 
-    messages.insertAdjacentHTML('afterbegin', html);
+    if (data.content.user_id === null) {
+    messageAdmin[0].insertAdjacentHTML('afterbegin', html);
+  } else {
+    messageUser[0].insertAdjacentHTML('afterbegin', html);
+    
+    }
     newMessage.value = '';
     submitMessage.disabled = false;
 

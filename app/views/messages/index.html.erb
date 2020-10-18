@@ -36,7 +36,7 @@
         <div class="message-login" id="messages">
           <% @messages.reverse_each do |message| %>
           <% if message.user_id %>
-          <div class="message-wrapper-right">
+          <div class="message-wrapper-right message-user">
             <div class="message-date">
               <%= message.created_at %>
             </div>
@@ -45,7 +45,7 @@
             </div>
           </div>
           <% else %>
-          <div class="message-wrappwer-left">
+          <div class="message-wrappwer-left message-admin">
             <div class="message-date">
               <%= message.created_at %>
             </div>
@@ -62,7 +62,7 @@
         <div class="message-login" id="messages">
           <% @messages.reverse_each do |message| %>
           <% if message.admin_id %>
-          <div class="message-wrapper-right">
+          <div class="message-wrapper-right message-admin">
             <div class="message-date">
               <%= message.created_at %>
             </div>
@@ -71,7 +71,7 @@
             </div>
           </div>
           <% else %>
-          <div class="message-wrappwer-left">
+          <div class="message-wrappwer-left message-user">
             <div class="message-date">
               <%= message.created_at %>
             </div>
