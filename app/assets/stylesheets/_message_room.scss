@@ -10,6 +10,9 @@ massage
 .side-bar {
   width: 300px;
   height: 100vh;
+  @include mq('tab') {
+    width: 0;
+	}
 }
 
 .side-bar-header {
@@ -33,13 +36,20 @@ massage
 
 .rooms {
   background-color: #d8d7b6;
-  height: calc(100vh - 100px);
-  padding: 0 20px;
+  height: calc(100vh - 100px);  
   overflow: scroll;
 }
 
 .room {
-  padding: 20px 0 40px;
+  padding: 20px 0 20px;
+  margin: 0 20px;
+font-size: 3rem;
+
+  &:hover {
+    opacity: $hover-opacity;
+    font-size: 4rem;
+    font-weight: 700;
+  }
 }
 
 .room-name a {
@@ -50,6 +60,9 @@ massage
 .chat {
   background-color: $color-background-main;
   width: calc(100% - 300px);
+  @include mq('tab') {
+    width: 100%;
+	}
 }
 
 .chat-header {
@@ -135,6 +148,9 @@ massage
 
 .form-wrapper {
   width: calc(100vw - 300px);
+  @include mq('tab') {
+    width: 100%;
+	}
 }
 
 .form {
@@ -172,4 +188,20 @@ massage
     opacity: $hover-opacity;
     cursor: pointer;
   }
+}
+/*--------------------------------
+room#index
+---------------------------------*/
+.side-bar-index {
+  width: 300px;
+  height: 100vh;
+  @include mq('tab') {
+    width: 100%;
+	}
+}
+
+.room-index {
+  font-size: 2rem;
+  background-color:#ffffff;
+  padding: 10px 20px;
 }
