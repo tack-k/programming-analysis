@@ -29,12 +29,12 @@
       </div>
     </div>
 
-    <div class="messages">
+    <div class="messages" id="messages">
       <div class="message">
 
         <%# if user_signed_in? %>
-        <div class="message-login" id="messages">
-          <% @messages.reverse_each do |message| %>
+        <div class="message-login" id="message">
+          <% @messages.each do |message| %>
           <% if message.user_id %>
           <div class="message-wrapper-right">
             <div class="message-date">

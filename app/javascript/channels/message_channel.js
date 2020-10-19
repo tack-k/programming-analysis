@@ -1,6 +1,16 @@
 import consumer from "./consumer"
 
+function scrollToEnd() {
+  const messagesArea = document.getElementById('messages');
+  messagesArea.scrollTop = messagesArea.scrollHeight;
+}
 
+function pullDown() {
+
+  scrollToEnd() 
+}
+
+window.addEventListener('turbolinks:load', pullDown)
 
 consumer.subscriptions.create("MessageChannel", {
   connected() {
@@ -32,19 +42,24 @@ consumer.subscriptions.create("MessageChannel", {
       </div>
       </div>`;
 
-    const Messages = document.getElementById('messages');
+    const Messages = document.getElementById('message');
     const newMessage = document.getElementById('message-text');
     const submitMessage = document.getElementById('message-submit');
 
     if (data.content.user_id === null) {
-      Messages.insertAdjacentHTML('afterbegin', htmlLeft);
+      Messages.insertAdjacentHTML('beforeend', htmlLeft);
+      scrollToEnd()
     } else {
-      Messages.insertAdjacentHTML('afterbegin', htmlRight);
+      Messages.insertAdjacentHTML('beforeend', htmlRight);
+      scrollToEnd()
     }
     newMessage.value = '';
     submitMessage.disabled = false;
+  
 
   }
+
+
 });
 
 
