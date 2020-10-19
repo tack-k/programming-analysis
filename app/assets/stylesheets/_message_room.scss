@@ -117,12 +117,20 @@ massage
 }
 
 .message-content {
-  color: #434a54;
   font-size: 1.4rem;
-  background-color: #4bff00;
   display: inline-block;
   padding: 10px 20px;
   border-radius: 8px;
+  color: #434a54;
+}
+
+.message-right {
+  background-color: #4bff00;
+
+}
+
+.message-left {
+  background-color: #7dcbf3;
 }
 
 .form-wrapper {

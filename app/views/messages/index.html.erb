@@ -32,11 +32,39 @@
     <div class="messages">
       <div class="message">
 
-        <% if user_signed_in? %>
+        <%# if user_signed_in? %>
         <div class="message-login" id="messages">
           <% @messages.reverse_each do |message| %>
           <% if message.user_id %>
-          <div class="message-wrapper-right message-user">
+          <div class="message-wrapper-right">
+            <div class="message-date">
+              <%= message.created_at %>
+            </div>
+            <div class="message-content message-right">
+              <%= message.message %>
+            </div>
+          </div>
+          <% else %>
+          <div class="message-wrappwer-left">
+            <div class="message-date">
+              <%= message.created_at %>
+            </div>
+            <div class="message-content message-left">
+              <%= message.message %>
+            </div>
+          </div>
+          <% end %>
+          <% end %>
+        </div>
+        <%# end %>
+
+        <% if false %>
+        ログイン者右表示コメントアウト開始
+        <% if admin_signed_in? %>
+        <div class="message-login" id="messages">
+          <% @messages.reverse_each do |message| %>
+          <% if message.admin_id %>
+          <div class="message-wrapper-right">
             <div class="message-date">
               <%= message.created_at %>
             </div>
@@ -45,7 +73,7 @@
             </div>
           </div>
           <% else %>
-          <div class="message-wrappwer-left message-admin">
+          <div class="message-wrappwer-left">
             <div class="message-date">
               <%= message.created_at %>
             </div>
@@ -57,31 +85,7 @@
           <% end %>
         </div>
         <% end %>
-
-        <% if admin_signed_in? %>
-        <div class="message-login" id="messages">
-          <% @messages.reverse_each do |message| %>
-          <% if message.admin_id %>
-          <div class="message-wrapper-right message-admin">
-            <div class="message-date">
-              <%= message.created_at %>
-            </div>
-            <div class="message-content">
-              <%= message.message %>
-            </div>
-          </div>
-          <% else %>
-          <div class="message-wrappwer-left message-user">
-            <div class="message-date">
-              <%= message.created_at %>
-            </div>
-            <div class="message-content">
-              <%= message.message %>
-            </div>
-          </div>
-          <% end %>
-          <% end %>
-        </div>
+        コメントアウト終了
         <% end %>
 
       </div>

@@ -12,29 +12,41 @@ consumer.subscriptions.create("MessageChannel", {
   },
 
   received(data) {
-    const html = `
-
-
+    const htmlLeft = `
+      <div class="message-wrappwer-left">
       <div class="message-date">
       <P>${data.content.created_at}</P>
       </div>
-      <div class="message-content">
+      <div class="message-content message-left">
       <P>${data.content.message}</P>
-      </div>`
-    ;
-    const messageAdmin = document.getElementsByClassName('message-admin');
-    const messageUser = document.getElementsByClassName('message-user');
+      </div>
+      </div>`;
+
+    const htmlRight = `
+      <div class="message-wrapper-right">
+      <div class="message-date">
+      <P>${data.content.created_at}</P>
+      </div>
+      <div class="message-content message-right">
+      <P>${data.content.message}</P>
+      </div>
+      </div>`;
+
+    const Messages = document.getElementById('messages');
     const newMessage = document.getElementById('message-text');
     const submitMessage = document.getElementById('message-submit');
 
     if (data.content.user_id === null) {
-    messageAdmin[0].insertAdjacentHTML('afterbegin', html);
-  } else {
-    messageUser[0].insertAdjacentHTML('afterbegin', html);
-    
+      Messages.insertAdjacentHTML('afterbegin', htmlLeft);
+    } else {
+      Messages.insertAdjacentHTML('afterbegin', htmlRight);
     }
     newMessage.value = '';
     submitMessage.disabled = false;
 
   }
 });
+
+
+
+
