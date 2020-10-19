@@ -97,11 +97,11 @@
           <ul class="answer-container">
             <li class="answer-wrapper">
             <%# プロゲート2 %>
-            <%= link_to 'Yes', '/studies/2', class: "answer-yes button-last" %> 
+            <%= link_to 'Yes', study_path(@study2.id), class: "answer-yes button-last" %> 
             </li>
             <li class="answer-wrapper">
-            <%# プロゲート %>
-            <%= link_to 'No', '/studies/2', class: "answer-no button-last" %> 
+            <%# プロゲート2 %>
+            <%= link_to 'No', study_path(@study2.id), class: "answer-no button-last" %> 
             </li>  
           </ul> 
         </div>
