@@ -10,6 +10,14 @@ result
 	background-color: #3E3E3E;
 	color: #F3F3F3;
 	margin-bottom: 50px;
+
+	@include mq('tab') {
+		font-size: 3.5rem;
+	}
+
+	@include mq('sp') {
+		font-size: 2rem;
+	}
 }
 
 .result-inner {
@@ -21,10 +29,17 @@ result
 	margin-bottom: 60px;
 	background-color: #fff;
 	padding: 5%;
+	@include mq('tab') {
+		flex-direction: column;
+		align-items: center;
+	}
 }
 
 .result-left {
 	flex-basis: 40%;
+	@include mq('tab') {
+		margin-bottom: 50px;
+	}
 }
 
 .result-image {
@@ -34,6 +49,9 @@ result
 .result-right {
 	flex-basis: 60%;
 	margin-left: 50px;
+	@include mq('tab') {
+		margin-left: 0;
+	}
 }
 
 .result-content-wrapper {
@@ -67,7 +85,6 @@ result
 
 .consultation {
 	margin-bottom: 50px;
-
 }
 
 .consultation-inner {
@@ -85,6 +102,7 @@ result
 	background-size: cover;
 	height: 700px;
 	position: relative;
+
 }
 
 .consultation-wrapper {
@@ -95,16 +113,29 @@ result
 	bottom: 50px;
 	left: 50%;
 	transform: translateX(-50%);
+
+	@include mq('tab') {
+		width: 100%;
+	}
 }
 
 .consultation-text {
 	font-size: 3rem;
 	padding: 5% 5% 0 5%;
+	@include mq('tab') {
+		font-size: 2.5rem;
+	}
+	@include mq('sp') {
+		font-size: 2rem;
+	}
 }
 
 
 .button-wrapper {
-	padding: 3% 0;
+	padding: 5% 0;
+	@include mq('sp') {
+		padding: 15% 0;
+	}
 }
 
 .result-button {
@@ -115,7 +146,8 @@ result
 	padding: 8px 10px;
 	font-size: 3rem;
 	font-weight: 700;
-	width: 350px;
+	width: 100%;
+	max-width: 350px;
 	box-shadow: 0px 3px 5px 0px rgba(62, 62, 62, 0.5);
 	display: inline-block;
 
