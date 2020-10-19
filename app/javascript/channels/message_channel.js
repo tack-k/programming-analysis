@@ -25,7 +25,7 @@ consumer.subscriptions.create("MessageChannel", {
     const htmlLeft = `
       <div class="message-wrappwer-left">
       <div class="message-date">
-      <P>${data.content.created_at}</P>
+      <P>${data.time}</P>
       </div>
       <div class="message-content message-left">
       <P>${data.content.message}</P>
@@ -35,7 +35,7 @@ consumer.subscriptions.create("MessageChannel", {
     const htmlRight = `
       <div class="message-wrapper-right">
       <div class="message-date">
-      <P>${data.content.created_at}</P>
+      <P>${data.time}</P>
       </div>
       <div class="message-content message-right">
       <P>${data.content.message}</P>
