@@ -1,18 +1,22 @@
 <div class="wrapper">
-  <div class="side-bar">
+  <div class="side-bar-index">
     <div class="side-bar-header">
       <div class="header-name">
         <%= link_to current_admin.name, admins_index_path %>
       </div>
     </div>
 
+    <div class="room-index">チャットルーム一覧</div>
+
     <div class="rooms">
       <% @rooms.each do |room| %>
+      <%= link_to room_messages_path(room.id) do %>
       <div class="room">
         <div class="room-name">
-          <%= link_to room.id,  room_messages_path(room.id) %>
+          <%= room.id %>
         </div>
       </div>
+      <% end %>
       <% end %>
     </div>
   </div>
