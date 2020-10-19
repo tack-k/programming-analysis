@@ -35,12 +35,17 @@ $layout-width-canvas: 1366px;
 $layout-width-inner: 1024px;
 
 // ブレークポイント
-$breakpoints: ("sp": "screen and (max-width: 375px)",
-	"tab": "screen and (max-width: 768px)",
-	"pc": "screen and (max-width: 900px)",
+$breakpoints: ("sp": "screen and (max-width: 480px)",
+	"tab": "screen and (max-width: 896px)",
 );
 
 // メディアクエリ
+@mixin mq($breakpoint: tab) {
+	@media #{map-get($breakpoints, $breakpoint)} {
+		@content;
+	}
+}
+
 @mixin mq($breakpoint: sp) {
 	@media #{map-get($breakpoints, $breakpoint)} {
 		@content;
@@ -85,14 +90,14 @@ body {
 	max-width: 100%;
 	height: inherit;
 	margin: 0 auto;
-	padding: 0 5%;
+	padding: 0 10%;
 
 	@include mq('tab') {
-		padding: 0 30px;
+		padding: 0 5%;
 	}
 
 	@include mq('sp') {
-		padding: 0 16px;
+		padding: 0 2%;
 	}
 }
 
@@ -138,6 +143,10 @@ footer
 	justify-content: flex-end;
 	background-color: #3E3E3E;
 	color: #F3F3F3;
+
+	@include mq('sp') {
+		font-size: 1.2rem;
+	}
 }
 
 /*=============================================
