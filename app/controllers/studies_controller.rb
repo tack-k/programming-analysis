@@ -49,6 +49,11 @@ class StudiesController < ApplicationController
     @analysis1 = Analysis.find(1)
     @analysis2 = Analysis.find(2)
     @analysis3 = Analysis.find(3)
+    @study1 = Study.find_by(method: 'デイトラ')
+    @study2 = Study.find_by(method: 'プロゲート')
+    @study3 = Study.find_by(method: 'TECH CAMP エンジニア転職')
+    @study4 = Study.find_by(method: 'TECH CAMP プログラミング教養')
+    @study5 = Study.find_by(method: 'Udemy')
   end
 
   def finish

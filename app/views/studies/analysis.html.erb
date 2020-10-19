@@ -51,11 +51,11 @@
           <ul class="answer-container">
             <li class="answer-wrapper">
             <%# テックキャンプエンジニア転職3 %>
-            <%= link_to 'Yes', '/studies/3', class: "answer-yes button-last" %> 
+            <%= link_to 'Yes', study_path(@study3.id), class: "answer-yes button-last" %> 
             </li>
             <li class="answer-wrapper">
             <%# デイトラ1 %>
-            <%= link_to 'No', '/studies/1', class: "answer-no button-last" %> 
+            <%= link_to 'No', study_path(@study1.id), class: "answer-no button-last" %> 
             </li>  
           </ul> 
         </div>
@@ -66,11 +66,11 @@
           <ul class="answer-container">
             <li class="answer-wrapper">
             <%# テックキャンププログラミング教養4 %>
-            <%= link_to 'Yes', '/studies/4', class: "answer-yes button-last" %> 
+            <%= link_to 'Yes', study_path(@study4.id), class: "answer-yes button-last" %> 
             </li>
             <li class="answer-wrapper">
             <%# Udemy5 %>
-            <%= link_to 'No', '/studies/5', class: "answer-no button-last" %> 
+            <%= link_to 'No', study_path(@study5.id), class: "answer-no button-last" %> 
             </li>  
           </ul> 
         </div>
@@ -82,11 +82,11 @@
           <ul class="answer-container">
             <li class="answer-wrapper">
             <%# プロゲート2 %>
-            <%= link_to 'Yes', '/studies/2', class: "answer-yes button-last" %> 
+            <%= link_to 'Yes', study_path(@study2.id), class: "answer-yes button-last" %> 
             </li>
             <li class="answer-wrapper">
-            <%# プロゲート %>
-            <%= link_to 'No', '/studies/2', class: "answer-no button-last" %> 
+            <%# プロゲート2 %>
+            <%= link_to 'No', study_path(@study2.id), class: "answer-no button-last" %> 
             </li>  
           </ul> 
         </div>
