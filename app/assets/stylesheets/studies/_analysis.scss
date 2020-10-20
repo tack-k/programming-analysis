@@ -5,7 +5,7 @@ analysis
 	background: image-url("analysis-image.png") no-repeat center center;
 	background-size: cover;
 
-	height: calc(100vh - 120px);
+	height: calc(var(--vh) * 100 - 120px);
 	padding-top: 100px;
 }
 

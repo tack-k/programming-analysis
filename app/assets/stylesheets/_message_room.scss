@@ -9,7 +9,7 @@ massage
 
 .side-bar {
   width: 300px;
-  height: 100vh;
+  height: calc(var(--vh) * 100);
   @include mq('tab') {
     width: 0;
 	}
@@ -39,7 +39,7 @@ massage
 
 .rooms {
   background-color: #d8d7b6;
-  height: calc(100vh - 100px);  
+  height: calc(var(--vh) * 100 - 100px); 
   overflow: scroll;
 }
 
@@ -99,7 +99,7 @@ font-size: 3rem;
 
 .messages {
   background-color: #FAFAFA;
-  height: calc(100vh - 100px - 90px);
+  height: calc(var(--vh) * 100 - 190px);
   padding: 46px 40px 0;
   overflow: scroll;
 }
@@ -197,7 +197,7 @@ room#index
 ---------------------------------*/
 .side-bar-index {
   width: 300px;
-  height: 100vh;
+  height: calc(var(--vh) * 100);
   @include mq('tab') {
     width: 100%;
 	}
