@@ -56,23 +56,22 @@ result
 
 .result-content-wrapper {
 	margin-bottom: 3%;
+
+	@include mq('sp') {
+		margin-bottom: 40px;
+	}
 }
 
 .result-content {
 	font-size: 3rem;
+
+	@include mq('sp') {
+   font-size: 2.5rem;
+	}
 }
 
-.result-reason-wrapper {
-	margin-bottom: 3%;
-}
 
-.result-reason {
-	font-size: 3rem;
-}
 
-.result-price {
-	font-size: 3rem;
-}
 
 .button-wrapper {
 	text-align: center;
