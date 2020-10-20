@@ -22,6 +22,9 @@ massage
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @include mq('tab') {
+    height: 0;
+	}
 }
 
 .header-name {

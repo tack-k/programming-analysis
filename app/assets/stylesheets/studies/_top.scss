@@ -6,16 +6,26 @@ main
 	background-size: cover;
 	padding-top: 5%;
 	padding-bottom: 10%;
+	height: calc(100vh - 120px);
+
+	@include mq('tab') {
+		padding-top: 10%;
+	}
+
+	@include mq('sp') {
+		padding-top: 20%;
+	}
 }
 
 .main-container {
 	padding: 5%;
 	background-color: rgba($color: $color-background-main, $alpha: 0.9);
 	margin: 0 auto;
+
 }
 
 .main-title {
-	font-size: 6rem;
+	font-size: 5.5rem;
 	font-weight: 700;
 	text-align: center;
 	background-color: $color-background-second;
@@ -58,7 +68,7 @@ main
 	}
 }
 
-.button-wrapper {
+.main-button-wrapper {
 	text-align: center;
 
 	:hover {

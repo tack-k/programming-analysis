@@ -16,4 +16,8 @@
     opacity: $hover-opacity;
     cursor: pointer;
   }
+
+  @include mq('tab') {
+    left: 50%;
+	}
 }
