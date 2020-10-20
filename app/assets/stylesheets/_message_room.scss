@@ -74,6 +74,10 @@ font-size: 3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @include mq('sp') {
+  height: 60px;
+	}
 }
 
 .header-title {
@@ -91,6 +95,11 @@ font-size: 3rem;
   border-radius: 5px;
   font-size: 1.8rem;
 
+  @include mq('sp') {
+    padding: 13px 10px;
+    font-size: 1.5rem;
+	}
+
   &:hover {
     opacity: $hover-opacity;
   }
@@ -102,6 +111,10 @@ font-size: 3rem;
   height: calc(var(--vh) * 100 - 190px);
   padding: 46px 40px 0;
   overflow: scroll;
+  
+  @include mq('sp') {
+    height: calc(var(--vh) * 100 - 110px);    
+	}
 }
 
 .message {
@@ -159,33 +172,46 @@ font-size: 3rem;
 .form {
   background-color: #DDDDDD;
   height: 90px;
-  padding: 20px 40px;
+  padding: 0 40px;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include mq('sp') {
+    height: 50px;
+    padding: 0 10px;
+	}
 }
 
-.form-input {
-  display: flex;
-  width: 100%;
+.form-message-wrapper {
+width: 100%;
 }
 
 .form-message {
-  height: 50px;
   width: 100%;
-  padding-left: 10px;
+  padding: 10px;
   border-radius: 10px;
   border: 3px solid #F3F3F3;
+  
+  @include mq('sp') {
+    padding: 5px;
+	}
 }
 
 .form-submit {
   background-color: $color-background-second;
   border: none;
   color: #F3F3F3;
-  height: 50px;
   margin-left: 15px;
-  padding: 0 30px;
+  padding: 5px 20px;
   border-radius: 999px;
   font-weight: 700;
   font-size: 1.8rem;
+
+  @include mq('sp') {
+    padding: 3px 15px;
+    font-size: 1.6rem;
+	}
 
   &:hover {
     opacity: $hover-opacity;
