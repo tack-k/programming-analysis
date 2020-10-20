@@ -1,5 +1,4 @@
 function load() {
-  console.log('aaa')
 
   var headerJs = $('#js-header');
 
