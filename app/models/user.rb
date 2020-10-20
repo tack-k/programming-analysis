@@ -4,8 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_one :room
-  has_many :messages
+  has_one :room, dependent: :destroy
+  has_many :messages, dependent: :destroy
   
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :result
