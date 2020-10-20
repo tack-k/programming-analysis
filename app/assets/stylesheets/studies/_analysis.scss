@@ -5,8 +5,8 @@ analysis
 	background: image-url("analysis-image.png") no-repeat center center;
 	background-size: cover;
 
-	height: calc(100vh - 80px);
-	padding-top: 5%;
+	height: calc(100vh - 120px);
+	padding-top: 100px;
 }
 
 #answer2-1, #answer2-2, #answer3-1, #answer3-2, #answer3-3, #answer3-4 {
@@ -16,8 +16,11 @@ analysis
 .analysis-wrapper {
 	padding: 5%;
 	background-color: rgba($color: $color-background-main, $alpha: 0.9);
-	width: 80%;
 	margin: 0 auto;
+
+	@include mq('sp') {
+		padding: 2%;
+	}
 }
 
 
@@ -33,6 +36,11 @@ font-size: 4.5rem;
 .answer-container {
 	display: flex;
 	justify-content: center;
+
+	@include mq('sp') {
+	flex-direction: column;
+	align-items: center;
+	}
 }
 
 .answer-wrapper {
@@ -42,6 +50,10 @@ font-size: 4.5rem;
 	:hover {
 		cursor: pointer;
 		opacity: $hover-opacity;
+	}
+
+	@include mq('sp') {
+		margin-bottom: 40px;
 	}
 }
 

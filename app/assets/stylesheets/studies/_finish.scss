@@ -5,38 +5,58 @@
 	padding-bottom: 2%;
 	display: flex;
 	justify-content: flex-end;
+	height: calc(100vh - 120px);
+
+	@include mq('tab') {
+		justify-content: center;
+	}
 }
 
 .thanks-container {
-	padding:  5%;
+	padding: 5%;
 	background-color: rgba($color: $color-background-main, $alpha: 0.9);
 	max-width: 600px;
 	width: 100%;
 	border-radius: 10px;
 	margin-bottom: 50px;
 
+	@include mq('tab') {
+    padding-top: 10%;
+	}
+
 }
 
 .thanks-main-title {
 	font-size: 3rem;
 	font-weight: 700;
-  text-align: center;
-  background-color: $color-background-second;
-  color: #F3F3F3;
-  border-radius: 4px;
+	text-align: center;
+	background-color: $color-background-second;
+	color: #F3F3F3;
+	border-radius: 4px;
 	margin-bottom: 10px;
 	border-radius: 8px;
+
+	@include mq('tab') {
+    font-size: 2.8rem;
+	}
+
+	@include mq('sp') {
+		font-size: 2.5rem;
+	}
 }
 
 .thanks-main-subtitle {
-font-size: 2.5rem;
-margin-bottom: 20px;
+	font-size: 2.5rem;
+	margin-bottom: 20px;
+	@include mq('sp') {
+		font-size: 2rem;
+	}
 }
 
 .thanks-main-lead {
 
-font-size: 2rem;
-margin-bottom: 15px;
+	font-size: 2rem;
+	margin-bottom: 15px;
 }
 
 .thanks-note {
@@ -53,15 +73,15 @@ margin-bottom: 15px;
 }
 
 .thanks-main-button {
-border-radius: 999px;	
-background-color: $color-active;
-border: none;
-color: #F3F3F3;
-padding: 4px 6px;
-font-size: 2rem;
-font-weight: 700;
-width: 200px;
-box-shadow: 0px 3px 5px 0px rgba(62, 62, 62, 0.5);
-display: inline-block;
+	border-radius: 999px;
+	background-color: $color-active;
+	border: none;
+	color: #F3F3F3;
+	padding: 4px 6px;
+	font-size: 2rem;
+	font-weight: 700;
+	width: 200px;
+	box-shadow: 0px 3px 5px 0px rgba(62, 62, 62, 0.5);
+	display: inline-block;
 
 }

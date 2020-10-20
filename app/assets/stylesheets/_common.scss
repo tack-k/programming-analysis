@@ -35,12 +35,17 @@ $layout-width-canvas: 1366px;
 $layout-width-inner: 1024px;
 
 // ブレークポイント
-$breakpoints: ("sp": "screen and (max-width: 375px)",
-	"tab": "screen and (max-width: 768px)",
-	"pc": "screen and (max-width: 900px)",
+$breakpoints: ("sp": "screen and (max-width: 480px)",
+	"tab": "screen and (max-width: 896px)",
 );
 
 // メディアクエリ
+@mixin mq($breakpoint: tab) {
+	@media #{map-get($breakpoints, $breakpoint)} {
+		@content;
+	}
+}
+
 @mixin mq($breakpoint: sp) {
 	@media #{map-get($breakpoints, $breakpoint)} {
 		@content;
@@ -85,15 +90,28 @@ body {
 	max-width: 100%;
 	height: inherit;
 	margin: 0 auto;
-	padding: 0 5%;
+	padding: 0 10%;
 
 	@include mq('tab') {
-		padding: 0 30px;
+		padding: 0 5%;
 	}
 
 	@include mq('sp') {
-		padding: 0 16px;
+		padding: 0 2%;
 	}
+}
+
+// z-index
+.header-right {
+	z-index: 1000;
+}
+
+.header-menu {
+	z-index: 100;
+}
+
+.menu-bg {
+	z-index: 10;
 }
 
 /*=============================================
@@ -104,6 +122,7 @@ header
 	justify-content: space-between;
 	padding: 15px 5%;
 	height: 80px;
+	align-items: center;
 }
 
 .header-logo {
@@ -118,15 +137,87 @@ header
 .header-right {
 	display: flex;
 	align-items: center;
+
+	@include mq('tab') {
+	background-color: #ffffff;
+	position: fixed;
+	top: 0;
+	left: 80px;
+	right: 0;
+	bottom: 0;
+	transform: translateX(100%);
+	transition: all .6s ease;
+	flex-direction: column;
+	justify-content: center;
+	}
 }
 
-.header-login {
+.header-item {
 	margin-right: 15px;
+	@include mq('tab') {
+	margin-right: 0;
+	margin-bottom: 20px;
+	font-size: 2.5rem;		
+	}
 }
 
 .header-sign-up {
 	margin-right: 15px;
 }
+
+//ハンバーガーメニュー
+.header-menu {
+	display: none;
+	@include mq('tab') {
+		background: image-url("menu-icon.png") no-repeat center center;
+		background-size: cover;
+		width: 50px;
+		height: 50px;
+		display: block;	
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
+
+.menu-bg {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: $color-background-second;
+	opacity: 0.7;
+	visibility: hidden;
+}
+
+.open {
+	.header-left {
+		display: none;
+	}
+	.header-menu {
+		background: image-url("batsu-icon.png") no-repeat center center;
+		background-size: cover;
+		width: 35px;
+		height: 35px;
+		position: fixed;
+		left: 20px;
+		top: 20px;
+	}
+
+	.menu-bg {
+		visibility: visible;
+	}
+
+	.header-right {
+		@include mq('tab') {
+			transform: translate(0);
+			transition: all .6s ease;
+		}
+	}
+}
+
 
 /*=============================================
 footer
@@ -138,6 +229,10 @@ footer
 	justify-content: flex-end;
 	background-color: #3E3E3E;
 	color: #F3F3F3;
+
+	@include mq('sp') {
+		font-size: 1.2rem;
+	}
 }
 
 /*=============================================

@@ -1,4 +1,4 @@
-  <header>
+  <header id="js-header">
     <div class="inner header-inner">
       <div class="header-left">
         <div class="header-logo">
@@ -6,31 +6,22 @@
         </div>
       </div>
       <div class="header-right">
-        <div class="header-login">
-          <%= link_to '管理ページ', new_admin_session_path %>
-        </div>
-
-        <% if admin_signed_in? %>
-        <div class="header-login">
-          <%= link_to '管理者仮ログアウト', destroy_admin_session_path, method: :delete %>
-        </div>
-        <% end %>
-
-
         <% if user_signed_in? %>
-        <div class="header-login">
+        <div class="header-item">
           <%= link_to current_user.username, '#' %>
         </div>
-        <div class="header-login">
+        <div class="header-item">
           <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
         </div>
         <% end %>
-        <div class="header-login">
+        <div class="header-item">
           <%= link_to 'チャット相談', new_user_session_path %>
         </div>
-        <div class="contact-inner">
+        <div class="header-item">
           <%= link_to 'お問い合わせ', '#' %>
         </div>
       </div>
+      <div class="header-menu"></div>
     </div>
+    <div class="menu-bg"></div>
   </header>

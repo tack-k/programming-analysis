@@ -5,12 +5,12 @@ function scrollToEnd() {
   messagesArea.scrollTop = messagesArea.scrollHeight;
 }
 
-function pullDown() {
+function load() {
 
   scrollToEnd() 
 }
 
-window.addEventListener('turbolinks:load', pullDown)
+window.addEventListener('turbolinks:load', load)
 
 consumer.subscriptions.create("MessageChannel", {
   connected() {
