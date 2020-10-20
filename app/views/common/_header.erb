@@ -8,7 +8,7 @@
       <div class="header-right">
         <% if user_signed_in? %>
         <div class="header-item">
-          <%= link_to current_user.username, '#' %>
+          <%= link_to current_user.username, edit_user_registration_path %>
         </div>
         <div class="header-item">
           <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
