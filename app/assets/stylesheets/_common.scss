@@ -154,6 +154,11 @@ header
 
 .header-item {
 	margin-right: 15px;
+
+	&:hover {
+		font-weight: 700;
+	}
+
 	@include mq('tab') {
 	margin-right: 0;
 	margin-bottom: 20px;
