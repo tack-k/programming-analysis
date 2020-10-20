@@ -16,7 +16,7 @@
       <% @admins.each do |admin| %>
       <input name="room[admin_ids][]" type="hidden" value=<%= admin.id %>>
       <% end %>
-      <%= f.submit 'チャットを開始する', class: "guide-room-btn" %>
+      <%= f.submit 'チャット開始', class: "guide-room-btn" %>
     </div>
     <% end %>
   </div>

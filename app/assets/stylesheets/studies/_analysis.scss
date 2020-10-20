@@ -7,6 +7,10 @@ analysis
 
 	height: calc(var(--vh) * 100 - 120px);
 	padding-top: 100px;
+
+	@include mq('sp') {
+		padding-top: 50px;
+	}
 }
 
 #answer2-1, #answer2-2, #answer3-1, #answer3-2, #answer3-3, #answer3-4 {
@@ -26,11 +30,19 @@ analysis
 
 .analysis-title {
 font-size: 5rem;
+
+@include mq('sp') {
+font-size: 4rem;
+}
 }
 
 .analysis-question {
 margin-bottom: 30px;
 font-size: 4.5rem;
+
+@include mq('sp') {
+font-size: 3.5rem;
+}
 }
 
 .answer-container {

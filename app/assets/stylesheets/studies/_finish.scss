@@ -5,7 +5,7 @@
 	padding-bottom: 2%;
 	display: flex;
 	justify-content: flex-end;
-	height: calc(100vh - 120px);
+	height: calc(var(--vh) * 100 - 120px);
 
 	@include mq('tab') {
 		justify-content: center;
