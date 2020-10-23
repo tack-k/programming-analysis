@@ -35,6 +35,8 @@ massage
   a {
     color: #FAFAFA;
   }
+  
+
 }
 
 .rooms {
@@ -84,6 +86,10 @@ font-size: 3rem;
   color: $color-text-main;
   font-size: 3rem;
   font-weight: 700;
+
+  @include mq('sp') {
+    font-size: 2rem;
+	}
 }
 
 
