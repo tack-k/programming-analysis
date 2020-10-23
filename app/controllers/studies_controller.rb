@@ -22,11 +22,9 @@ class StudiesController < ApplicationController
   end
 
   def show
-
   end
 
   def edit
-
   end
 
   def update
@@ -39,7 +37,7 @@ class StudiesController < ApplicationController
 
   def destroy
     if @study.destroy
-      redirect_to  studies_path
+      redirect_to studies_path
     else
       render :edit
     end
@@ -62,6 +60,7 @@ class StudiesController < ApplicationController
   end
 
   private
+
   def studies_params
     params.require(:study).permit(:method, :content, :reason, :price, :image, :url)
   end
@@ -71,15 +70,10 @@ class StudiesController < ApplicationController
   end
 
   def move_root_no_login
-    unless user_signed_in?
-      redirect_to root_path
-    end
+    redirect_to root_path unless user_signed_in?
   end
 
   def move_sign_in_no_login
-    unless admin_signed_in?
-      redirect_to new_admin_session_path
-    end
+    redirect_to new_admin_session_path unless admin_signed_in?
   end
-
 end

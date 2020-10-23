@@ -1,10 +1,9 @@
 class RoomsController < ApplicationController
-
   before_action :move_root_no_login, only: [:new, :login]
   before_action :move_sign_in_no_login, only: :index
-  
+
   def index
-    @rooms = Room.includes(:messages).order("messages.created_at DESC") 
+    @rooms = Room.includes(:messages).order('messages.created_at DESC')
   end
 
   def new
@@ -23,28 +22,20 @@ class RoomsController < ApplicationController
 
   def login
     @room = Room.find_by(user_id: current_user.id)
-    if @room == nil
-      redirect_to new_room_path
-    end
+    redirect_to new_room_path if @room.nil?
   end
 
+  private
 
-private
-
-def room_params
-  params.require(:room).permit(admin_ids: []).merge(user_id: current_user.id)
-end
-
-def move_root_no_login
-  unless user_signed_in?
-    redirect_to root_path
+  def room_params
+    params.require(:room).permit(admin_ids: []).merge(user_id: current_user.id)
   end
-end
 
-def move_sign_in_no_login
-  unless admin_signed_in?
-    redirect_to new_admin_session_path
+  def move_root_no_login
+    redirect_to root_path unless user_signed_in?
   end
-end
 
+  def move_sign_in_no_login
+    redirect_to new_admin_session_path unless admin_signed_in?
+  end
 end

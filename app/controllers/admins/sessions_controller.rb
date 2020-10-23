@@ -20,14 +20,13 @@ class Admins::SessionsController < Devise::SessionsController
 
   protected
 
-  def after_sign_in_path_for(resource)
+  def after_sign_in_path_for(_resource)
     admins_index_path
   end
 
-  def after_sign_out_path_for(resource)
+  def after_sign_out_path_for(_resource)
     new_admin_session_path
-  end 
-
+  end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_in_params

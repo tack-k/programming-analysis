@@ -8,4 +8,3 @@ class Result < ActiveHash::Base
     { id: 5, title: 'Udemy' }
   ]
 end
-

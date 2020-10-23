@@ -1,5 +1,4 @@
 class AdminsController < ApplicationController
-
   before_action :move_sign_in_no_login, only: [:index, :edit]
 
   def index
@@ -7,10 +6,8 @@ class AdminsController < ApplicationController
   end
 
   private
-  def move_sign_in_no_login
-    unless admin_signed_in?
-      redirect_to new_admin_session_path
-    end
-  end
 
+  def move_sign_in_no_login
+    redirect_to new_admin_session_path unless admin_signed_in?
+  end
 end

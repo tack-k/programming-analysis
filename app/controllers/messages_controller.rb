@@ -2,7 +2,6 @@ class MessagesController < ApplicationController
   before_action :set_room, only: :index
   before_action :move_root_no_user, only: :index
 
-
   def index
     @message = Message.new
     @user = User.find_by(id: @room.user_id)
@@ -11,7 +10,9 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new(message_params)
-    ActionCable.server.broadcast 'message_channel', content: @message, time: @message.created_at.strftime('%Y-%m-%d %H:%M') if @message.save
+    if @message.save
+      ActionCable.server.broadcast 'message_channel', content: @message, time: @message.created_at.strftime('%Y-%m-%d %H:%M')
+    end
   end
 
   private
@@ -26,13 +27,10 @@ class MessagesController < ApplicationController
   end
 
   def set_room
-    @room = Room.find(params[:room_id]) 
+    @room = Room.find(params[:room_id])
   end
 
   def move_root_no_user
-    if !admin_signed_in? && (current_user&.id != @room.user_id)
-      redirect_to root_path
-    end
+    redirect_to root_path if !admin_signed_in? && (current_user&.id != @room.user_id)
   end
-
 end

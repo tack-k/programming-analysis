@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   has_one :room, dependent: :destroy
   has_many :messages, dependent: :destroy
-  
+
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :result
 

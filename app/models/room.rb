@@ -1,5 +1,4 @@
 class Room < ApplicationRecord
-
   has_many :room_admins
   has_many :admins, through: :room_admins
   belongs_to :users, optional: true

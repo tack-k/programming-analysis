@@ -1,4 +1,3 @@
-
 class Analysis < ActiveHash::Base
   self.data = [
     { id: 1, no: 'Q.1', question: 'HTML,CSSの役割を説明できる' },
