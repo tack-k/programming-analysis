@@ -11,7 +11,7 @@ RSpec.describe Admin, type: :model do
         expect(@admin).to be_valid
       end
 
-      it 'passwordが8文字以上の半角英数字かつpassword_confirmationと一致している' do
+      it 'passwordが8文字以上でpassword_confirmationと一致している' do
         @admin.password = '1234abcd'
         @admin.password_confirmation = @admin.password
         expect(@admin).to be_valid
@@ -57,24 +57,6 @@ RSpec.describe Admin, type: :model do
         expect(@admin.errors.full_messages).to include('パスワードは8文字以上で入力してください')
       end
       
-      it 'passwordが数字のみ' do
-        @admin.password = '12345678'
-        @admin.valid?
-        expect(@admin.errors.full_messages).to include('パスワードには英字と数字の両方を含めて設定してください')
-      end
-
-      it 'passwordが英字のみ' do
-        @admin.password = 'abcdefgh'
-        @admin.valid?
-        expect(@admin.errors.full_messages).to include('パスワードには英字と数字の両方を含めて設定してください')
-      end
-
-      it 'passwordに大文字が含まれている' do
-        @admin.password = '1234aaaあ'
-        @admin.valid?
-        expect(@admin.errors.full_messages).to include('パスワードには英字と数字の両方を含めて設定してください')
-      end
-
       it 'passwordconfimationがpasswordと一致していない' do
         @admin.save
         @admin.password_confirmation = ''
