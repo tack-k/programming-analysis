@@ -17,28 +17,28 @@
 
   <div class="form-group">
     <div class='form-text-wrap'>
-      <label class="form-text">ユーザーネーム</label>
+      <label for="username" class="form-text">ユーザーネーム</label>
       <span class="indispensable">必須</span>
     </div>
     <%= f.text_area :username, class:"input-default", id:"username", placeholder:"例) 山田太郎", maxlength:"40", autofocus: true %>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
-      <label class="form-text">メールアドレス</label>
+      <label for="email" class="form-text">メールアドレス</label>
       <span class="indispensable">必須</span>
     </div>
     <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC・携帯どちらでも可" %>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
-      <label class="form-text">診断結果</label>
+      <label for="result" class="form-text">診断結果</label>
       <span class="indispensable">必須</span>
     </div>
     <%= f.collection_select(:result_id, Result.all, :id, :title, {}, {class:"input-default", id:"result"}) %>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
-      <label class="form-text">パスワード</label>
+      <label for="password" class="form-text">パスワード</label>
       <span class="indispensable">必須</span>
     </div>
     <%= f.password_field :password, class:"input-default", id:"password", placeholder:"8文字以上の半角英数字" %>
@@ -46,7 +46,7 @@
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
-      <label class="form-text">パスワード(確認)</label>
+      <label for="password-confirmation" class="form-text">パスワード(確認)</label>
       <span class="indispensable">必須</span>
     </div>
     <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation", placeholder:"同じパスワードを入力" %>
