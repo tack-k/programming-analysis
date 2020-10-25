@@ -35,7 +35,7 @@ RSpec.describe "ルーム作成", type: :system do
       expect(current_path).to eq login_rooms_path
       #チャット開始ボタンをクリックしても、Roomモデルのカウントは変わらない
       expect{find('.guide-room-btn').click}.to change {Room.count}.by(0)
-      #チャット画面に遷移する
+      #チャット画面に遷移することを確認
       expect(current_path).to eq room_messages_path(@room.id)
     end
   end
