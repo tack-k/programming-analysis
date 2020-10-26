@@ -82,3 +82,40 @@ RSpec.describe "ログイン", type: :system do
   end
 end
 
+
+RSpec.describe "管理者編集", type: :system do
+  before do
+    @admin = FactoryBot.create(:admin)
+  end
+  
+  context '管理者情報の編集ができる場合' do
+    it 'ログインしたユーザーは自分の情報を編集できる' do
+      #ログインする
+      visit new_admin_session_path 
+      fill_in 'メールアドレス', with: @admin.email
+      fill_in 'パスワード', with: @admin.password
+      find('input[name="commit"]').click
+      expect(current_path).to eq admins_index_path
+      #編集ボタンが有る
+      expect(page).to have_link '編集'
+      #編集ボタンをクリックする
+      click_link '編集'
+      #編集ページに遷移していることを確認
+      expect(current_path).to eq edit_admin_registration_path
+      #すでに登録済みの内容がフォームに入力されていることを確認する
+      expect(find('#name').value).to eq @admin.name
+      expect(find('#email').value).to eq @admin.email
+      #新しい内容を入力する
+      fill_in '氏名', with: '氏名編集'
+      fill_in 'メールアドレス', with: 'edit@gmail.com'
+      fill_in '新しいパスワード', with: '1234abcd'
+      fill_in 'パスワード（確認用）', with: '1234abcd'
+      fill_in '現在のパスワード', with: @admin.password
+      #編集ボタンをクリックしてもAdminモデルのカウントは変わらないことを確認する
+      expect{find('input[name="commit"]').click}.to change {Admin.count}.by(0)
+      #管理者一覧画面に遷移したことを確認する
+      expect(current_path).to eq admins_index_path     
+    end
+  end
+end
+
