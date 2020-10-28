@@ -119,3 +119,31 @@ RSpec.describe "管理者編集", type: :system do
   end
 end
 
+
+RSpec.describe "管理者削除", type: :system do
+  before do
+    @admin = FactoryBot.create(:admin)
+  end
+  
+  context '管理者情報の削除ができる場合' do
+    it 'ログインしたユーザーは自分の情報を削除できる' do
+      #ログインする
+      visit new_admin_session_path 
+      fill_in 'メールアドレス', with: @admin.email
+      fill_in 'パスワード', with: @admin.password
+      find('input[name="commit"]').click
+      expect(current_path).to eq admins_index_path
+      #削除ボタンが有ることを確認する
+      expect(page).to have_link '削除', href: admin_registration_path
+      #編集ボタンをクリックしてもAdminモデルのカウントが1減少することを確認する
+      click_on '削除'
+      #alrtが表示されることを確認する
+      expect{
+      expect(page.accept_confirm).to eq "本当に削除しますか?"
+      sleep 0.5
+      }.to change{Admin.count}.by(-1)
+      #管理者一覧画面に遷移したことを確認する
+      expect(current_path).to eq new_admin_session_path
+    end
+  end
+end
