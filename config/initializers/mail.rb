@@ -8,7 +8,6 @@ ActionMailer::Base.smtp_settings = {
   user_name: 'on83.koike.takumi@gmail.com',
   password: ENV["GMAIL_PASSWORD"],
   authentication: 'plain',
-  openssl_verify_mode: 'none',
   enable_starttls_auto: true
 }
 
