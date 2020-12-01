@@ -21,7 +21,7 @@ RSpec.describe '管理者新規登録', type: :system do
       fill_in 'パスワード', with: @admin.password
       fill_in 'パスワード(確認)', with: @admin.password_confirmation
       # 会員登録ボタンを押すadminモデルカウントが1上がる
-      expect {find('input[name="commit"]').click}.to change {Admin.count}.by(1)
+      expect { find('input[name="commit"]').click}.to change {Admin.count}.by(1)
       # 管理者一覧ページへ遷移している
       expect(current_path).to eq admins_index_path
     end
