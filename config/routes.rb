@@ -9,6 +9,9 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
 
+  devise_scope :user do
+    post 'users/guest_sign_in', to: 'users/sessions#new_guest'
+  end
 
 
   root to: 'studies#top'
@@ -25,7 +28,6 @@ Rails.application.routes.draw do
       get 'analysis'
       get 'top'
       get 'finish'
-      post 'guest_sign_in', to: 'home#new_guest'
     end
   end
 end
