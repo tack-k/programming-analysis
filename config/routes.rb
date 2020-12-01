@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
 
+
+
   root to: 'studies#top'
 
   resources :rooms, only:[:index, :new, :create] do
@@ -23,6 +25,7 @@ Rails.application.routes.draw do
       get 'analysis'
       get 'top'
       get 'finish'
+      post 'guest_sign_in', to: 'home#new_guest'
     end
   end
 end
