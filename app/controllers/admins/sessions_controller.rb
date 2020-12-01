@@ -18,6 +18,12 @@ class Admins::SessionsController < Devise::SessionsController
   #   super
   # end
 
+  def new_guest
+    admin = Admin.guest
+    sign_in admin
+    redirect_to admins_index_path
+  end
+
   protected
 
   def after_sign_in_path_for(_resource)
