@@ -9,4 +9,11 @@ class Admin < ApplicationRecord
   has_many :messages
 
   validates :name, presence: true
+
+  def self.guest
+    find_or_create_by!(email: 'guest@example.com') do |admin|
+      admin.password = SecureRandom.alphanumeric
+      admin.name = 'guestAdmin'
+    end
+  end
 end
