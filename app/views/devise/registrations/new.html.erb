@@ -1,5 +1,9 @@
 <%= render "common/header"%>
-
+<div style="text-align: center;">
+<button class="register-color-btn" style="background: #ff9801;">
+  <%= link_to 'ゲストログイン【登録省略】', users_guest_sign_in_path, style: "color: white;", method: :post %>
+</button>
+</div>
 <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
 
 <div class='form-wrap'>
@@ -8,8 +12,9 @@
       会員情報入力
     </h1>
     <div class="form-header-change">
-    <%= link_to '会員登録済みの場合はこちら', new_user_session_path %>
+      <%= link_to '会員登録済みの場合はこちら', new_user_session_path %>
     </div>
+
 
   </div>
 
