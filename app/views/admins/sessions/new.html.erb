@@ -1,4 +1,9 @@
   <%= render "common/header_management" %>
+<div style="text-align: center;">
+  <button class="register-color-btn" style="background: #ff9801;">
+  <%= link_to 'ゲストログイン【登録省略】', admins_guest_sign_in_path, style: "color: white;", method: :post %>
+</button>
+</div>
 
  <%= form_with model: @admin, url: admin_session_path,  class: 'registration-main', local: true do |f| %> 
 <div class='form-wrap'>
