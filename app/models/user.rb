@@ -17,4 +17,12 @@ class User < ApplicationRecord
     validates :result_id
     validates :password, format: { with: PASSWORD_REGEX, message: 'には英字と数字の両方を含めて設定してください' }
   end
+
+  def self.guest
+    find_or_create_by!(email: 'guest@example.com') do |user|
+      user.password = SecureRandom.alphanumeric
+      user.username = 'guest'
+      user.result_id = 1
+    end
+  end
 end
